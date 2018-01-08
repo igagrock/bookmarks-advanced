@@ -15,7 +15,10 @@ browser.bookmarks.getTree().then(
 		console.log("error happend", err);
 	});
 
-
+/**
+ * 
+ * @param {*} arr 
+ */
 var traverse = function(arr){
 
 	if(arr && arr.length > 0 ){
