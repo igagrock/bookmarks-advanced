@@ -14,8 +14,7 @@ const config = {
     context: path.resolve(__dirname, SRC),
     entry: {
         background: './app/js/background.js',
-        tab : './app/js/tab.js',
-        vendor: ['jquery']
+        tab : './app/js/tab.js'
     },
     output: {
         path: path.resolve(__dirname, BUILD),
@@ -66,6 +65,17 @@ const config = {
                 })
             },
             {
+                test: /\.css$/,
+                 include: path.resolve(__dirname, 'node_modules/angular-material'),
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        { loader: "css-loader", options: { sourceMap: true } },
+                        { loader: "postcss-loader", options: { sourceMap: true } }
+                    ]
+                })
+            },
+            {
                 test: /\.(jp(e*)g|svg)$/,
                 include: path.resolve(__dirname, SRC),
                 use: [{
@@ -107,7 +117,7 @@ const config = {
         new HtmlWebpackPlugin({
             title : 'Advanced Bookmark Manager',
             template :'./app/templates/tab.html',
-            chunks : ['tab','vendor'],
+            chunks : ['jquery','angular','tab'],
             filename: "./templates/tab.html",
             cache : true
           }),
