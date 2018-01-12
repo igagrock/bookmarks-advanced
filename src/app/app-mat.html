@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>bookmarks management</title>
+</head>
+
+<body data-ng-app="myApp" layout="column" data-ng-controller="userListCrtl as ul">
+    <md-toolbar class="md-whiteframe-1dp" layout="row">
+        <md-button class="menu" data-ng-click="ul.toggleNav()" hide-gt-sm>menu</md-button>
+        <h4>advanced bookmarks</h4>
+    </md-toolbar>
+    <div class="containter" layout="row" flex>
+        <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-1dp" md-component-id='left'>
+            <md-list data-ng-click="ul.toggleNav()">
+
+                <md-list-item>
+                    <md-button>
+                        <md-icon md-svg-src="man" class="avatar"></md-icon>
+                        main button
+                    </md-button>
+                </md-list-item>
+                <md-list-item>
+                    <md-button>
+                        <md-icon md-svg-src="man" class="avatar"></md-icon>
+                        Another button
+                    </md-button>
+                </md-list-item>
+                <md-list-item>
+                    <md-button>
+                        <md-icon md-svg-src="man" class="avatar"></md-icon>
+                        extra button
+                    </md-button>
+                </md-list-item>
+            </md-list>
+            <md-button class="md-fab md-mini" aria-label="close" data-ng-click="ul.showBottomSheet()">
+                x
+            </md-button>
+        </md-sidenav>
+        <div class="container" style="border: 10px solid red;display: block; width:100%;">
+            
+
+        </div>   
+    </div>
+
+
+</body>
+
+</html>

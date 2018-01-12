@@ -1,17 +1,3 @@
-
-import  '../assets/css/app.css';
-import '../../../node_modules/angular-material/angular-material.css';
-import $ from 'jquery';
-import angular from 'angular';
-import  ngMaterial from 'angular-material';
-
-angular.module('myApp',['ngMaterial'])
-	.run(function(){
-		console.log("it is running... ");
-	});
-
-
-
 var allBookmarks;
 browser.bookmarks.getTree().then(
 	(obj)=>{

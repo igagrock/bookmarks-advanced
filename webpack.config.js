@@ -7,18 +7,19 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
+
 const SRC = 'src';
 const BUILD = 'dist';
 
 const config = {
     context: path.resolve(__dirname, SRC),
     entry: {
-        background: './app/js/background.js',
-        tab : './app/js/tab.js'
+        background: './app/background.js',
+        app : './app/app.module.js'
     },
     output: {
         path: path.resolve(__dirname, BUILD),
-        filename: 'js/[name]-bundle.js'
+        filename: 'js/[name].js'
     },
     module: {
         rules: [
@@ -41,8 +42,8 @@ const config = {
             },
             {
                 //similarly for css without sass loader
-                test: /\.scss$/,
-                include: path.resolve(__dirname, SRC),
+                test: /\.(scss)$/,
+                include: path.resolve(__dirname, 'src'),
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
@@ -54,19 +55,7 @@ const config = {
             },
             {
                 test: /\.css$/,
-                // include: path.resolve(__dirname, 'node_modules/bootstrap-css/lib/'),
-                include: path.resolve(__dirname, SRC),
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        { loader: "css-loader", options: { sourceMap: true } },
-                        { loader: "postcss-loader", options: { sourceMap: true } }
-                    ]
-                })
-            },
-            {
-                test: /\.css$/,
-                 include: path.resolve(__dirname, 'node_modules/angular-material'),
+                include: path.resolve(__dirname, 'src'),
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
@@ -107,20 +96,31 @@ const config = {
     },
     plugins:[
         new CleanWebpackPlugin(['dist']),
+        new ExtractTextPlugin('assets/css/app.css'),
         new CopyWebpackPlugin([
-            {from:'./app/assets/icons',to:'./icons/', debug:'debug'} 
+            {from:'./app/assets/icons',to:'./assets/icons/'} 
         ]),
         new CopyWebpackPlugin([
-            {from:'./app/manifest.json',to:'./', debug:'debug'} 
+            {from:'./app/manifest.json',to:'./'} 
         ]), 
-        new ExtractTextPlugin('styles/app.css'),
+        new CopyWebpackPlugin([
+            {from:'./app/templates',to:'./templates'} 
+        ]),
+       
         new HtmlWebpackPlugin({
             title : 'Advanced Bookmark Manager',
-            template :'./app/templates/tab.html',
-            chunks : ['jquery','angular','tab'],
-            filename: "./templates/tab.html",
+            template :'./app/app.html',
+            chunks : ['jquery','angular','app'],
+            filename: "./app.html",
             cache : true
           }),
+
+          new webpack.ProvidePlugin({ // inject ES5 modules as global vars
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Tether: 'tether'
+          })
         //new UglifyJSPlugin({ test: /\.js($|\?)/i }),
     ]
 

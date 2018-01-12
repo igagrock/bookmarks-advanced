@@ -1,6 +1,6 @@
 
 var log = console.log;
-const TAB_URL = browser.runtime.getURL("../templates/tab.html");
+const TAB_URL = browser.runtime.getURL("app.html");
 
 log("background started on load");
 
