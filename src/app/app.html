@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body data-ng-app="app" data-ng-controller="logBookmarkCtrl as lbc">
     <!-- Image and text -->
 
     <div class=" side-nav">
@@ -27,83 +27,26 @@
             </button>
         </div>
         <div class="nav-menu">
-            <div class="card">
-                <div class="card-header" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false"
-                    aria-controls="collapseOne">
+        
+            <div class="card" data-ng-repeat=" ele in lbc.parentBookMarks">
+                <div class="card-header" role="tab" id="{{'heading'+ele.id}}" data-toggle="collapse" data-parent="#accordion" href="{{'#collapse'+ele.id}}" aria-expanded="false"
+                    aria-controls="collapseOne" data-ng-click="lbc.getBookMarks()">
                     <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
-                    <span class="text">folder name here</span>
+                    <span class="text">{{ele.title }}</span>
 
-                    <span class="badge badge-primary badge-pill">3</span>
+                    <span class="badge badge-primary badge-pill">{{ lbc.getFolderLength(ele) }}</span>
 
                 </div>
 
-                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div id="{{'collapse'+ele.id}}" class="collapse" role="tabpanel" aria-labelledby="{{'heading'+ele.id}}">
                     <ul class="list-group children">
-                        <li class="  list-group-item d-flex justify-content-between align-items-center">
+                        <li class="  list-group-item d-flex justify-content-between align-items-center"
+                        data-ng-repeat="ch in ele.children" data-ng-if="ch.type == 'folder'"
+                        >
                             <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
-                            <span class="text">folder name here</span>
-                            <span class="badge badge-primary badge-pill">1</span>
+                            <span class="text">{{ch.title}}</span>
+                            <span class="badge badge-primary badge-pill">{{ lbc.getFolderLength(ch)}}</span>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
-                                <span class="text">folder name here</span>
-                                <span class="badge badge-primary badge-pill">1</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
-                                <span class="text">folder name here</span>
-                                <span class="badge badge-primary badge-pill">1</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
-                                <span class="text">folder name here</span>
-                                <span class="badge badge-primary badge-pill">1</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" role="tab" id="headingtwo" data-toggle="collapse" data-parent="#accordion" href="#collapsetwo" aria-expanded="false"
-                    aria-controls="collapsetwo">
-                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
-                    <span class="text">folder name here</span>
-
-                    <span class="badge badge-primary badge-pill">6</span>
-
-                </div>
-
-                <div id="collapsetwo" class="collapse" role="tabpanel" aria-labelledby="headingtwo">
-                    <ul class="list-group children">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
-                                    <span class="text">folder name here</span>
-                                    <span class="badge badge-primary badge-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
-                                    <span class="text">folder name here</span>
-                                    <span class="badge badge-primary badge-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
-                                    <span class="text">folder name here</span>
-                                    <span class="badge badge-primary badge-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
-                                    <span class="text">folder name here</span>
-                                    <span class="badge badge-primary badge-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
-                                    <span class="text">folder name here</span>
-                                    <span class="badge badge-primary badge-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
-                                    <span class="text">folder name here</span>
-                                    <span class="badge badge-primary badge-pill">1</span>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -131,7 +74,7 @@
 
     </div>
     <div class="content">
-        <nav class="navbar navbar-light bg-dark col-12">
+        <nav class="navbar navbar-fixed navbar-light bg-dark col-12">
 
             <form class="form-inline">
                 <input class="form-control form-control-sm" type="search" placeholder="search bookmarks">
@@ -160,15 +103,18 @@
         <div class="container-fluid border">
             <div class="row">
                 <!-- card start -->
-                <div class="card card-wrapper mt-3 ml-3 mr-3" style="width: 12rem;">
-                    <button type="button" class="btn btn-primary btn-circle edit-icon">
-                        <img src="assets/icons/edit.svg" alt="edit">
-                    </button>
-                    <p class="card-text">bookmark about something and other thing</p>
-                    <img class="card-img-top" src="https://www.google.com/s2/favicons?domain_url=https://www.npmjs.com" alt="Card image cap">
+                <div class="card card-wrapper mt-3 ml-3 mr-3" style="width: 12rem;" data-ng-repeat="b in lbc.parentBookMarks">
+                        <div class="card-poster  bg-grey">
+                                <button type="button" class="btn btn-primary btn-circle edit-icon">
+                                    <img src="assets/icons/edit.svg" alt="edit">
+                                </button>
+                                
+                                <img  src="assets/icons/folder.svg" class="mt-2" alt="folder">
+                                
+                            </div>
                     <div class="card-body">
                         <div class="card-desc mb-2">
-                            <span class="title">www.google.com</span>
+                            <span class="title">{{b.title | limitTo: 30}}{{b.title.length > 30 ? '...' : ''}}</span>
 
                         </div>
 

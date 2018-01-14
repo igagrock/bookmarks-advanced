@@ -3,12 +3,12 @@ import  './assets/scss/app.scss';
 import  './assets/css/app.css';
 import $ from 'jquery';
 import angular from 'angular';
-import userListModule from './modules/user-list/user-list.module'
+import bookmarkModule from './modules/bookmark/bookmarks.module';
 
 
 import 'bootstrap';
 
-angular.module('myApp',['userListModule'])
+angular.module('app',['bookmarkModule'])
 	
 	.run(function(){
 		console.log("it is running... ");
