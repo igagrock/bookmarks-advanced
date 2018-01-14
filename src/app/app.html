@@ -18,16 +18,145 @@
     <!-- Image and text -->
 
     <div class=" side-nav">
-        <input class="form-control mr-sm-4" type="search" placeholder="Search" aria-label="Search">
+        <div class="nav-header ">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/icons/main-32.png" width="30" height="30" class="d-inline-block align-top" alt=""> Bookmark Manager
+            </a>
+            <button type="button" class="btn btn-danger bg-grey btn-circle btn-lg edit-icon" data-toggle="modal" data-target="#exampleModal">
+                <img class="lg" src="assets/icons/add.svg" alt="edit">
+            </button>
+        </div>
+        <div class="nav-menu">
+            <div class="card">
+                <div class="card-header" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false"
+                    aria-controls="collapseOne">
+                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
+                    <span class="text">folder name here</span>
 
+                    <span class="badge badge-primary badge-pill">3</span>
+
+                </div>
+
+                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <ul class="list-group children">
+                        <li class="  list-group-item d-flex justify-content-between align-items-center">
+                            <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
+                            <span class="text">folder name here</span>
+                            <span class="badge badge-primary badge-pill">1</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
+                                <span class="text">folder name here</span>
+                                <span class="badge badge-primary badge-pill">1</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
+                                <span class="text">folder name here</span>
+                                <span class="badge badge-primary badge-pill">1</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
+                                <span class="text">folder name here</span>
+                                <span class="badge badge-primary badge-pill">1</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="headingtwo" data-toggle="collapse" data-parent="#accordion" href="#collapsetwo" aria-expanded="false"
+                    aria-controls="collapsetwo">
+                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
+                    <span class="text">folder name here</span>
+
+                    <span class="badge badge-primary badge-pill">6</span>
+
+                </div>
+
+                <div id="collapsetwo" class="collapse" role="tabpanel" aria-labelledby="headingtwo">
+                    <ul class="list-group children">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
+                                    <span class="text">folder name here</span>
+                                    <span class="badge badge-primary badge-pill">1</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
+                                    <span class="text">folder name here</span>
+                                    <span class="badge badge-primary badge-pill">1</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
+                                    <span class="text">folder name here</span>
+                                    <span class="badge badge-primary badge-pill">1</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
+                                    <span class="text">folder name here</span>
+                                    <span class="badge badge-primary badge-pill">1</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
+                                    <span class="text">folder name here</span>
+                                    <span class="badge badge-primary badge-pill">1</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
+                                    <span class="text">folder name here</span>
+                                    <span class="badge badge-primary badge-pill">1</span>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     <div class="content">
-        <nav class="navbar navbar-light bg-light col-12">
-            <a class="navbar-brand" href="#">
-                <img src="/assets/icons/man.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Bookmark Manager
-            </a>
-         </nav>
+        <nav class="navbar navbar-light bg-dark col-12">
+
+            <form class="form-inline">
+                <input class="form-control form-control-sm" type="search" placeholder="search bookmarks">
+
+            </form>
+            <ul class="border-0">
+                <li>
+                    <button type="button" class="btn btn-danger ">
+                        <img src="assets/icons/grid.svg" alt="edit">
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-danger ">
+                        <img src="assets/icons/list.svg" alt="edit">
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-danger ">
+                        <img src="assets/icons/setting.svg" alt="edit">
+                    </button>
+                </li>
+            </ul>
+
+
+        </nav>
         <div class="container-fluid border">
             <div class="row">
                 <!-- card start -->
@@ -36,7 +165,7 @@
                         <img src="assets/icons/edit.svg" alt="edit">
                     </button>
                     <p class="card-text">bookmark about something and other thing</p>
-                    <img class="card-img-top" src="https://www.google.com/s2/favicons?domain_url=https://www.facebook.com" alt="Card image cap">
+                    <img class="card-img-top" src="https://www.google.com/s2/favicons?domain_url=https://www.npmjs.com" alt="Card image cap">
                     <div class="card-body">
                         <div class="card-desc mb-2">
                             <span class="title">www.google.com</span>
@@ -46,7 +175,7 @@
                         <div class="card-controlls offset-md-6">
 
                             <button type="button" class="btn btn-warning btn-circle">
-                                <img src="assets/icons/copy.svg" alt="move">
+                                <img src="assets/icons/copy.svg" height="30" width="30" alt="move">
                             </button>
                             <button type="button" class="btn btn-danger btn-circle">
                                 <img src="assets/icons/del.svg" alt="delete">
@@ -55,15 +184,14 @@
                         </div>
                     </div>
                 </div>
-                <!-- card start -->
+                <!-- card end -->
                 <!-- card start -->
                 <div class="card card-wrapper mt-3 ml-3 mr-3" style="width: 12rem;">
                     <button type="button" class="btn btn-primary btn-circle edit-icon">
                         <img src="assets/icons/edit.svg" alt="edit">
                     </button>
                     <p class="card-text">bookmark about something and other thing</p>
-                    <img class="card-img-top" src="https://www.google.com/s2/favicons?domain_url=https://bootsnipp.com/snippets/featured/circle-button"
-                        alt="Card image cap">
+                    <img class="card-img-top" src="https://www.google.com/s2/favicons?domain_url=https://www.sass-lang.com" alt="Card image cap">
                     <div class="card-body">
                         <div class="card-desc mb-2">
                             <span class="title">www.google.com</span>
@@ -73,7 +201,7 @@
                         <div class="card-controlls offset-md-6">
 
                             <button type="button" class="btn btn-warning btn-circle">
-                                <img src="assets/icons/copy.svg" alt="move">
+                                <img src="assets/icons/copy.svg" height="30" width="30" alt="move">
                             </button>
                             <button type="button" class="btn btn-danger btn-circle">
                                 <img src="assets/icons/del.svg" alt="delete">
@@ -82,11 +210,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- card start -->
+                <!-- card end -->
+
                 <!-- card start -->
                 <div class="card card-wrapper mt-3 ml-3 mr-3" style="width: 12rem;">
 
-                    <div class="card-poster">
+                    <div class="card-poster ">
                         <button type="button" class="btn btn-primary btn-circle edit-icon">
                             <img src="assets/icons/edit.svg" alt="edit">
                         </button>
