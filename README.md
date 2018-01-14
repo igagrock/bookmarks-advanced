@@ -1,2 +1,6 @@
 # bookmarks-advanced
-advanced bookmark management for firefox
+> UNDER DEVELOPMENT
+
+Features:
+- HTML5 User interface
+- Operation customization
