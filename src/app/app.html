@@ -17,7 +17,7 @@
 <body data-ng-app="app" data-ng-controller="logBookmarkCtrl as lbc">
     <!-- Image and text -->
 
-    <div class=" side-nav">
+    <div class=" side-nav" >
         <div class="nav-header ">
             <a class="navbar-brand" href="#">
                 <img src="/assets/icons/main-32.png" width="30" height="30" class="d-inline-block align-top" alt=""> Bookmark Manager
@@ -30,7 +30,7 @@
         
             <div class="card" data-ng-repeat=" ele in lbc.parentBookMarks">
                 <div class="card-header" role="tab" id="{{'heading'+ele.id}}" data-toggle="collapse" data-parent="#accordion" href="{{'#collapse'+ele.id}}" aria-expanded="false"
-                    aria-controls="collapseOne" data-ng-click="lbc.getBookMarks()">
+                    aria-controls="collapseOne">
                     <img class="lg" src="assets/icons/folder-24.svg" alt="edit">
                     <span class="text">{{ele.title }}</span>
 
@@ -103,7 +103,7 @@
         <div class="container-fluid border">
             <div class="row">
                 <!-- card start -->
-                <div class="card card-wrapper mt-3 ml-3 mr-3" style="width: 12rem;" data-ng-repeat="b in lbc.parentBookMarks">
+                <div class="card card-wrapper mt-3 ml-3 mr-3" style="width: 12rem" data-ng-repeat="ele in lbc.bookMarks">
                         <div class="card-poster  bg-grey">
                                 <button type="button" class="btn btn-primary btn-circle edit-icon">
                                     <img src="assets/icons/edit.svg" alt="edit">
@@ -114,7 +114,7 @@
                             </div>
                     <div class="card-body">
                         <div class="card-desc mb-2">
-                            <span class="title">{{b.title | limitTo: 30}}{{b.title.length > 30 ? '...' : ''}}</span>
+                            <span class="title">{{ele.title | limitTo : 30}}{{ ele.title.length  > 30 ? '...' : ''}}</span>
 
                         </div>
 
@@ -132,7 +132,7 @@
                 </div>
                 <!-- card end -->
                 <!-- card start -->
-                <div class="card card-wrapper mt-3 ml-3 mr-3" style="width: 12rem;">
+                <div class="card card-wrapper mt-3 ml-3 mr-3" style="width: 12rem;" >
                     <button type="button" class="btn btn-primary btn-circle edit-icon">
                         <img src="assets/icons/edit.svg" alt="edit">
                     </button>
