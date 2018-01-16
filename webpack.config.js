@@ -16,6 +16,7 @@ const config = {
     entry: {
         background: './app/background.js',
         app : './app/app.module.js'
+        // vendor: to be added 
     },
     output: {
         path: path.resolve(__dirname, BUILD),

@@ -148,8 +148,8 @@ div.side-nav {
 
                     span.text {
                         color: $brandColor;
-                        padding-left: .1rem;
-                        margin-left: -5rem;
+                        width: 100%;
+                        margin-left: 1rem;
                     }
 
                     span.badge {
@@ -272,7 +272,7 @@ div.card-poster {
     height: 12rem;
     width: 100%;
     vertical-align: middle;
-    background: $brandColor;
+    background: $bgBlack;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     padding: 10%;
@@ -283,10 +283,15 @@ div.card-poster {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     font-family: $PtSans400;
     border-width: 0px;
+    cursor: pointer;
 }
 
 .card:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+    div.card-poster {
+        background-color: $brandColor;
+    }
 }
 
 .card-body {

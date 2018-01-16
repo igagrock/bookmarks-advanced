@@ -1,0 +1,56 @@
+<div class=" side-nav" >
+    <div class="nav-header ">
+        <a class="navbar-brand" href="#">
+            <img src="../../assets/icons/main-32.png" width="30" height="30" class="d-inline-block align-top" alt=""> Bookmark Manager
+        </a>
+        <button type="button" class="btn btn-danger bg-grey btn-circle btn-lg edit-icon" data-toggle="modal" data-target="#exampleModal">
+            <img class="lg" src="../../assets/icons/add.svg" alt="edit">
+        </button>
+    </div>
+    <div class="nav-menu">
+    
+        <div class="card" data-ng-repeat=" ele in $ctrl.parentBookMarks">
+            <div class="card-header" role="tab" id="{{'heading'+ele.id}}" data-toggle="collapse" data-parent="#accordion" href="{{'#collapse'+ele.id}}" aria-expanded="false"
+                aria-controls="collapseOne">
+                <img class="lg" src="../../assets/icons/folder-24.svg" alt="edit">
+                <span class="text">{{ele.title | limitTo: 20 }} {{ele.title.length > 25 ? '...': ''}}</span>
+
+                <span data-ng-show=" $ctrl.getFolderLength(ele) > 0" class="badge badge-primary badge-pill">{{ $ctrl.getFolderLength(ele) }}</span>
+
+            </div>
+
+            <div id="{{'collapse'+ele.id}}" class="collapse" role="tabpanel" aria-labelledby="{{'heading'+ele.id}}">
+                <ul class="list-group children">
+                    <li class="  list-group-item d-flex justify-content-between align-items-center"
+                    data-ng-repeat="ch in ele.children" data-ng-if="ch.type == 'folder'"
+                    >
+                        <img class="lg" src="../../assets/icons/folder-24.svg" alt="edit">
+                        <span class="text">{{ch.title | limitTo : 25 }}{{ch.title.length > 25 ?'..':'' }}</span>
+                        <span data-ng-show="$ctrl.getFolderLength(ch) > 0" class="badge badge-primary badge-pill">{{ $ctrl.getFolderLength(ch)}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
