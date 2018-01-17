@@ -1,10 +1,8 @@
-import bookmarkService from  "./bookmark.service";
-import logBookmarkCtrl from "./log-bookmark.controller";
-import sideNavComponent from "./side-nav.component";
+import bookmarkService from "../../services/bookmark.service";
+import sideNavModule from "../sidenav/side-nav.module";
+import topNavModule from "../topnav/top-nav.module";
+import cardsModule from "../cards/cards.module";
 
 export default
-angular.module('bookmarkModule', [] )
-.controller('logBookmarkCtrl', logBookmarkCtrl)
-.service('bookmarkService',bookmarkService)
-.component("sideNav", sideNavComponent() )
-.name;
+    angular.module('bookmarkModule', ['topNavModule', 'sideNavModule', 'cardsModule'])
+        .name;

@@ -1,0 +1,39 @@
+<div class="container-fluid border">
+    <div class="row">
+ 
+ 
+ <!-- card start -->
+ <div class="card card-wrapper mt-3 ml-3 mr-3" style="width: 12rem" data-ng-repeat="ele in lbc.bookMarks"
+ data-ng-click="lbc.openBookMark(ele)"
+ >
+         <div class="card-poster">
+                 <button type="button" class="btn btn-primary btn-circle edit-icon">
+                     <img src="../../assets/icons/edit.svg" alt="edit">
+                 </button>
+                 
+                 <img data-ng-if="ele.type == 'folder'" src="../../assets/icons/folder.svg" width="20" height="20" class="mt-2" alt="folder">
+                 <img data-ng-if="ele.type == 'bookmark'" src="../../assets/icons/doc.svg" width="20" height="20" class="mt-2" alt="bookmark">                                
+             </div>
+     <div class="card-body">
+         <div class="card-desc mb-2">
+             <span class="title">{{ele.title | limitTo : 30}}{{ ele.title.length  > 30 ? '...' : ''}}</span>
+
+         </div>
+
+         <div class="card-controlls offset-md-6">
+
+             <button type="button" class="btn btn-warning btn-circle">
+                 <img src="../../assets/icons/copy.svg" height="30" width="30" alt="move">
+             </button>
+             <button type="button" class="btn btn-danger btn-circle">
+                 <img src="../../assets/icons/del.svg" alt="delete">
+             </button>
+
+         </div>
+     </div>
+ </div>
+ <!-- card end -->
+
+ </div>
+ </div>
+ 

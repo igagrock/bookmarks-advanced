@@ -10,6 +10,7 @@
   "author": "igagrock",
   "license": "ISC",
   "devDependencies": {
+    "@uirouter/angularjs": "^1.0.13",
     "ajv": "^6.0.0",
     "ajv-keywords": "^3.0.0",
     "angular": "^1.6.8",
@@ -48,5 +49,8 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.13"
+  }
 }

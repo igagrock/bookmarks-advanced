@@ -1,7 +1,7 @@
 export default
     /*@ngInject */
 
-    class parentBookmarkController {
+    class sideNavController {
     constructor($scope, bookmarkService) {
         var _this = this;
         _this.parentBookMarks = [];
