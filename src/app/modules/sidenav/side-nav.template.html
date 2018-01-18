@@ -10,14 +10,16 @@
     <div class="nav-menu">
     
         <div class="card" data-ng-repeat=" ele in $ctrl.parentBookMarks">
+          <a ui-sref="bookmarks/{{ele.id}}">
             <div class="card-header" role="tab" id="{{'heading'+ele.id}}" data-toggle="collapse" data-parent="#accordion" href="{{'#collapse'+ele.id}}" aria-expanded="false"
-                aria-controls="collapseOne">
-                <img class="lg" src="../../assets/icons/folder-24.svg" alt="edit">
-                <span class="text">{{ele.title | limitTo: 20 }} {{ele.title.length > 25 ? '...': ''}}</span>
+            aria-controls="collapseOne">
+            <img class="lg" src="../../assets/icons/folder-24.svg" alt="edit">
+            <span class="text">{{ele.title | limitTo: 20 }} {{ele.title.length > 25 ? '...': ''}}</span>
 
-                <span data-ng-show=" $ctrl.getFolderLength(ele) > 0" class="badge badge-primary badge-pill">{{ $ctrl.getFolderLength(ele) }}</span>
+            <span data-ng-show=" $ctrl.getFolderLength(ele) > 0" class="badge badge-primary badge-pill">{{ $ctrl.getFolderLength(ele) }}</span>
 
-            </div>
+        </div>
+          </a>
 
             <div id="{{'collapse'+ele.id}}" class="collapse" role="tabpanel" aria-labelledby="{{'heading'+ele.id}}">
                 <ul class="list-group children">
