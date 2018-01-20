@@ -1,47 +1,49 @@
 import _ from "lodash";
 window._ = _;
-/*@ngInject */
+
 export default
 	class BookMarkService {
-
-	constructor() {
+	/*@ngInject */
+	constructor($state, $log) {
 		var _this = this;
 		var flattenArray = [];
-		_this.getBookMarkFlatArray = function () {
-			return browser.bookmarks.getTree()
-				.then(
-					(arr) => { return getFlattenArray(arr[0].children); }
+		 _this.loadCardState = (id)=>{		
+				$log.info("loadCardState called.. ", id);
+				$state.go('cards', { id: id });
+		 }
+		_this.fetchBookmarks = function (id) {
+			var log = $log;
+			log.info("value for id = ", id);
+			return browser.bookmarks.getChildren(id)
+				.then((resultArray) => {
+					return _.reduce(resultArray, function (result, ele) {
+						if (ele.type == 'folder' || ele.type == 'bookmark') {
+							result.push(ele);
+						}
+						return result;
+					}, []);
+				}
 				);
 		}
 		_this.getParentBookMarks = function () {
 			return browser.bookmarks.getTree().then(
 				(arr) => {
-					return arr[0].children;
+					return _.reduce(arr[0].children, (result,ele)=>{
+						if(ele.type == 'folder'){
+							result.push(ele);
+						}
+						return result;
+					},[]);
 				}
 			);
 		}
-		_this.getChildrenFolderLength = function(obj){
+		_this.getChildrenFolderLength = function (obj) {
 			var len = 0;
 			_.each(obj.children, (ele) => {
-				if(ele.type == 'folder') len++;
+				if (ele.type == 'folder') len++;
 			});
 			return len;
 		}
-
-		function getFlattenArray(arr) {
-			_.each(arr, function (obj, k) {
-
-				if (obj.type === "folder") {
-					flattenArray.push(obj);
-					getFlattenArray(obj.children);
-				}
-				else if (obj.type == "bookmark") {
-					flattenArray.push(obj);
-				}
-			});
-			return flattenArray;
-		}
-
 
 	}
 

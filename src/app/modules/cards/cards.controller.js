@@ -2,7 +2,7 @@ export default
     /*@ngInject */
 
     class cardsController {
-    constructor($scope, bookmarkService) {
+    constructor($scope, $state, $stateParams, bookmarkService) {
         var _this = this;
         _this.bookMarks = [];
         _this.getFolderLength = function (obj) {
@@ -12,12 +12,22 @@ export default
             if(ele.type == 'bookmark'){
                 window.open(ele.url, '_blank');
             }
+            else if(ele.type == "folder"){
+                bookmarkService.loadCardState(ele.id);
+            }
         }
-        var getBookMarks = function () {
-            bookmarkService.getBookMarkFlatArray().then(
-                (arr) => {$scope.$apply(() => { _this.bookMarks = arr; });});
+        var getBookMarks = function (id) {
+            
+            console.log("controller called.. id= ",id);
+            bookmarkService.fetchBookmarks(id).then(
+                (arr) => {$scope.$apply(() => { 
+                    _this.bookMarks.splice(0, _this.bookMarks.length);
+                    _this.bookMarks = arr; 
+                    console.log("size of bookmark", _this.bookMarks.length);
+                
+                });});
         }
 
-        getBookMarks();
+        getBookMarks($stateParams.id);
     }
 }
