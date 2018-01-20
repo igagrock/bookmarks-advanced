@@ -13,6 +13,10 @@ export default
                 url: "/cards/:id",
                 component: 'cards'
             })
+            .state("cards.edit",{
+                url:"/edit/:eId",
+                component: 'edit'
+            })
             ;
 
         //  $urlRouterProvider.when('','/all');

@@ -119,7 +119,7 @@ const config = {
           new webpack.ProvidePlugin({ // inject ES5 modules as global vars
             $: 'jquery',
             jQuery: 'jquery',
-            'window.jQuery': 'jquery',
+            'window.jQuery': 'jquery',      
             Tether: 'tether'
           })
         //new UglifyJSPlugin({ test: /\.js($|\?)/i }),

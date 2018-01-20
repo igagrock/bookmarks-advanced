@@ -7,8 +7,8 @@
  data-ng-click="lbc.openBookMark(ele)"
  >
          <div class="card-poster">
-                 <button type="button" class="btn btn-primary btn-circle edit-icon">
-                     <img src="../../assets/icons/edit.svg" alt="edit">
+                 <button type="button" class="btn btn-primary btn-circle edit-icon" data-ng-click="lbc.editBookmark($event, ele.id)">
+                     <img src="../../assets/icons/edit.svg" alt="edit" >
                  </button>
                  
                  <img data-ng-if="ele.type == 'folder'" src="../../assets/icons/folder.svg"  class="mt-2" alt="folder">
@@ -36,4 +36,5 @@
 
  </div>
  </div>
+ <ui-view></ui-view>
  

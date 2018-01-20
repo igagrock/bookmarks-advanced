@@ -11,7 +11,7 @@ import config from './app.config';
 
 
 import 'bootstrap';
-
+/*@ngInject */
 angular.module('app',['ui.router','ngAnimate','bookmarkModule'])
 	.config(config)
 	.run(function(){

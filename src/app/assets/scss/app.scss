@@ -71,6 +71,26 @@ div.content {
 }
 
 /** vertical nav **/
+div.content-nav {
+    height: 100%;
+    width: 600px;
+    min-width: 600px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 68.2%;
+    background-color:  rgb(41, 43, 43);
+    overflow-x: hidden;
+    box-shadow: -1px 0px 2px 0px rgba(0, 0, 0, 0.75);
+    transition: linear 2s leftToRight;
+
+    div.nav-menu {
+        margin: 2rem;
+        padding: 2rem;
+        background-color: $inputBackground;
+        height: auto;
+    }
+}
 
 div.side-nav {
     height: 100%;
@@ -286,6 +306,7 @@ div.card-poster {
 
 .card:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
     div.card-poster {
         transition: background-color 0.5s ease;
         background-color: $brandColor;
@@ -316,16 +337,12 @@ div.card-poster {
 }
 
 .card-wrapper.ng-leave {
-
     animation-name: bounceOut;
 }
 
 .card-wrapper.ng-enter {
-
     animation-name: bounceIn;
-
 }
-
 
 .edit-icon {
     position: absolute;
