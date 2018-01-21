@@ -66,6 +66,14 @@ export default
 			});
 		}
 
+		_this.updateBookMark = function(bookmark){
+			return browser.bookmarks.update(bookmark.id, {
+				title: bookmark.title,
+				url: bookmark.url
+			});
+		}
+
+
 		_this.getChildrenFolderLength = function (obj) {
 			var len = 0;
 			_each(obj.children, (ele) => {

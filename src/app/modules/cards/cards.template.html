@@ -4,8 +4,7 @@
  
  <!-- card start -->
  <div class="card card-wrapper mt-3 ml-3 mr-3" style="width: 12rem" data-ng-repeat="ele in lbc.bookMarks"
- data-ng-click="lbc.openBookMark(ele)"
- >
+ data-ng-click="lbc.openBookMark(ele)" on-update="lbc.refreshBookmarks(id)" >
          <div class="card-poster">
                  <button type="button" class="btn btn-primary btn-circle edit-icon" data-ng-click="lbc.editBookmark($event, ele.id)">
                      <img src="../../assets/icons/edit.svg" alt="edit" >
@@ -22,10 +21,10 @@
 
          <div class="card-controlls offset-md-6">
 
-             <button type="button" class="btn btn-warning btn-circle">
+             <button type="button" class="btn btn-warning btn-circle copy">
                  <img src="../../assets/icons/copy.svg" height="30" width="30" alt="move">
              </button>
-             <button type="button" class="btn btn-danger btn-circle">
+             <button type="button" class="btn btn-danger btn-circle delete">
                  <img src="../../assets/icons/del.svg" alt="delete">
              </button>
 

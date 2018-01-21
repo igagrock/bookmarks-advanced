@@ -2,8 +2,9 @@ export default
     /*@ngInject */
 
     class cardsController {
-    constructor($scope, $state, $stateParams, bookmarkService) {
+    constructor($scope, $log, $state, $stateParams, bookmarkService) {
         var _this = this;
+        var log = $log;
         _this.bookMarks = [];
         _this.getFolderLength = function (obj) {
             return bookmarkService.getChildrenFolderLength(obj);
@@ -20,6 +21,12 @@ export default
             event.stopPropagation();
             bookmarkService.loadEditState(id);
         }
+
+        _this.refreshBookmarks = (id)=>{
+            log.info("refreshBookmarks called.. ");
+            getBookMarks(id);
+        }
+
         var getBookMarks = function (id) {
 
             console.log("controller called.. id= ", id);
@@ -35,5 +42,9 @@ export default
         }
 
         getBookMarks($stateParams.id);
+        
+        browser.bookmarks.onChanged.addListener(()=>{
+            _this.refreshBookmarks($stateParams.id);
+        });
     }
 }

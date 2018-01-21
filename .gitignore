@@ -4,6 +4,7 @@
 
 #ignore dist directory
 /dist
+.vscode
 
 #ignore any log files
 *.log
