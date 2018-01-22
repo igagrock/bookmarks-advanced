@@ -87,7 +87,7 @@ div.content-nav {
     background-color: rgb(41, 43, 43);
     overflow-x: hidden;
     box-shadow: -1px 0px 2px 0px rgba(0, 0, 0, 0.75);
-    transition: 2s;
+
 
     div.nav-menu {
         // margin: 1rem;
@@ -121,6 +121,8 @@ div.content-nav {
                     font-family: $PtSans400;
                     appearance: none;
                     min-height: 100px;
+                    word-break: break-all;
+                    overflow-x: scroll;
                 }
 
                 span, select {
@@ -215,7 +217,7 @@ div.side-nav {
             div.card-header:hover {
                 background-color: $brandColor;
                 color: #f1f1f1;
-                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
 
                 span.text {
                     color: #f1f1f1;
@@ -223,7 +225,6 @@ div.side-nav {
 
                 span.badge {
                     background-color: #f1f1f1;
-                    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
                     color: $brandColor;
                 }
             }
@@ -233,7 +234,7 @@ div.side-nav {
                     background-color: #222;
                     padding-left: 2rem;
                     cursor: pointer;
-                    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                   
 
                     span.text {
                         color: $brandColor;
@@ -243,7 +244,6 @@ div.side-nav {
 
                     span.badge {
                         background-color: $brandColor;
-                        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
                         float: right;
                     }
                 }
@@ -269,7 +269,7 @@ div.side-nav {
 
         div.card:hover {
             box-shadow: 0 0 0 rgba(0, 0, 0, 0.25), 0 0 0 rgba(0, 0, 0, 0.22);
-            border: 1px solid $brandColor;
+
         }
     }
 }
@@ -400,12 +400,13 @@ div.card-body:hover {
 .card {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     font-family: $PtSans400;
-    border-width: 0px;
+    
     cursor: pointer;
 }
 
 .card:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
 
     div.card-poster {
         transition: background-color 0.5s ease;

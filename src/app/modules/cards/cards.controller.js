@@ -2,7 +2,7 @@ export default
     /*@ngInject */
 
     class cardsController {
-    constructor($scope, $log, $state, $stateParams, bookmarkService) {
+    constructor($scope, $log,$timeout, $state, $stateParams, bookmarkService) {
         var _this = this;
         var log = $log;
         _this.bookMarks = [];
@@ -24,7 +24,13 @@ export default
 
         _this.refreshBookmarks = (id)=>{
             log.info("refreshBookmarks called.. ");
-            getBookMarks(id);
+            _this.bookMarks.splice(0, _this.bookMarks.length);
+            $timeout(()=>{
+                console.clear();
+                console.log("timeout called 2");
+                getBookMarks(id);
+            },100);
+          
         }
 
         var getBookMarks = function (id) {
@@ -43,8 +49,8 @@ export default
 
         getBookMarks($stateParams.id);
         
-        browser.bookmarks.onChanged.addListener(()=>{
-            _this.refreshBookmarks($stateParams.id);
-        });
+        // browser.bookmarks.onChanged.addListener(()=>{
+        //     _this.refreshBookmarks($stateParams.id);
+        // });
     }
 }

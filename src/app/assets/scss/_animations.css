@@ -76,11 +76,11 @@
 @keyframes added {
   from {
     opacity: 0;
-    top: 100%;
+    right: 100%;
   }
   to {
     opacity: 1;
-    top: 0%;
+    right: 0%;
   }
 }
 

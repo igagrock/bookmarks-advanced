@@ -9,7 +9,7 @@ export default
             controller: editController,
             controllerAs: 'edCtrl',
             bindings: {
-                onUpdate: '&'
+                onBookmarkUpdate: '&'
             }
         }
     }

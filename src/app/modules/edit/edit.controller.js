@@ -2,7 +2,7 @@ export default
     /*@ngInject */
 
     class editController {
-    constructor($scope, $log, $stateParams, bookmarkService) {
+    constructor($scope, $log, $timeout , $stateParams, bookmarkService) {
         var _this = this;
         var log = $log;
         _this.bookmark = {};
@@ -37,9 +37,8 @@ export default
             bookmarkService.updateBookMark(_this.bookmark)
                 .then(
                 (obj) => {
+                    _this.onBookmarkUpdate({id: _this.bookmark.parentId});
                     _this.loadPreviousState();
-                    console.log("onupdate = ", _this.onUpdate);
-                    _this.onUpdate({id: _this.bookmark.parentId});
                  },
                 (err) => {
                     alert("error happened during update", err);
