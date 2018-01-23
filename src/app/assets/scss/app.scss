@@ -63,27 +63,17 @@ $PtSans400: "PT Sans", sans-serif;
     }
 }
 
-div.content {
-    height: 100%;
-    width: 82%;
-    position: fixed;
-    z-index: 0;
-    top: 0;
-    left: 350px;
-    background-color: rgb(205, 211, 211);
-    overflow-x: hidden;
-    transition: 0.5s;
-}
+
 
 /** vertical nav **/
 div.content-nav {
     height: 100%;
-    width: 400px;
-    min-width: 400px;
+    width: 20%;
+    min-width: 20%;
     position: fixed;
     z-index: 100;
     top: 0;
-    left: 79%;
+    left: 80%;
     background-color: rgb(41, 43, 43);
     overflow-x: hidden;
     box-shadow: -1px 0px 2px 0px rgba(0, 0, 0, 0.75);
@@ -163,10 +153,23 @@ div.content-nav {
     }
 }
 
+
+div.content {
+    height: 100%;
+    width: 80%;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 20%;
+    background-color: rgb(205, 211, 211);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
 div.side-nav {
     height: 100%;
-    width: 350px;
-    min-width: 350px;
+    width: 20%;
+    min-width: 20%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -464,7 +467,7 @@ div.card-desc span.title {
 }
 
 .bg-grey {
-    background-color: $brandColor !important;
+    background-color: $bgBlack !important;
 }
 
 .bg-grey:hover {

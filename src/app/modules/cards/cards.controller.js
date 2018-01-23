@@ -6,6 +6,8 @@ export default
         var _this = this;
         var log = $log;
         _this.bookMarks = [];
+
+
         _this.getFolderLength = function (obj) {
             return bookmarkService.getChildrenFolderLength(obj);
         }
@@ -26,12 +28,11 @@ export default
             log.info("refreshBookmarks called.. ");
             _this.bookMarks.splice(0, _this.bookMarks.length);
             $timeout(()=>{
-                console.clear();
-                console.log("timeout called 2");
                 getBookMarks(id);
             },100);
           
         }
+
 
         var getBookMarks = function (id) {
 

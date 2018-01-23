@@ -1,3 +1,5 @@
+import _values from 'lodash/values';
+
 export default
     /*@ngInject */
 
@@ -49,12 +51,23 @@ export default
             bookmarkService.getParentBookMarks()
                 .then((result) => {
                     $scope.$apply(() => {
-                        _this.folders = result;
-                        _this.parentBookmark = result[0];
+                        // _this.folders = result;
+                        // _this.parentBookmark = result[0];
                         log.info("folder = ", _this.folders);
                     });
                 });
         }
+
+         var getAllFolders = ()=>{
+            bookmarkService.fetchBookMarkFolders().then((result)=>{
+        
+                log.info("all folders ", result);
+                $scope.$apply(()=>{
+                    _this.folders = _values(result);
+                    _this.parentBookmark = result[_this.bookmark.parentId];
+                });
+            });
+       }
 
         var getBookmark = function () {
             bookmarkService.fetchBookMark($stateParams.eId)
@@ -63,27 +76,27 @@ export default
                         log.info("obj = ", arrObjs);
                         _this.bookmark = arrObjs[$stateParams.eId];
 
-                        getParentBookmark();
                     });
                 });
         }
-        /**
-         * TBD 
-         * Check the issue related to ngmodel for select not working for particula object froms different data sets
-         */
-        var getParentBookmark = function () {
-            bookmarkService.fetchBookMark(_this.bookmark.parentId)
-                .then((arrObjs) => {
-                    $scope.$apply(() => {
-                        //     log.info("obj of parent = ", arrObjs);
-                        //     var x = [arrObjs[_this.bookmark.parentId]];
-                        //    _this.parentBookmark = x[0];
-                        //     log.info("parent bookmark =  ",_this.parentBookmark);
-                    });
-                });
-        }
+        // /**
+        //  * TBD 
+        //  * Check the issue related to ngmodel for select not working for particula object froms different data sets
+        //  */
+        // var getParentBookmark = function () {
+        //     bookmarkService.fetchBookMark(_this.bookmark.parentId)
+        //         .then((arrObjs) => {
+        //             $scope.$apply(() => {
+        //                 //     log.info("obj of parent = ", arrObjs);
+        //                 //     var x = [arrObjs[_this.bookmark.parentId]];
+        //                 //    _this.parentBookmark = x[0];
+        //                 //     log.info("parent bookmark =  ",_this.parentBookmark);
+        //             });
+        //         });
+        // }
         getBookmark();
         getBookMarkFolders();
+        getAllFolders();
 
     }
 }
