@@ -29,7 +29,7 @@ div.side-nav {
 
                 span.text {
                     padding-left: .5rem;
-                    font-size: 16px;
+                    font-size: responsive 8px 14px;
                     text-transform: capitalize;
                     color: $brandColor;
                     font-family: $PtSans400;
@@ -38,7 +38,7 @@ div.side-nav {
                 span.badge {
                     background-color: $brandColor;
                     float: right;
-                    font-size: 16px;
+                    font-size: responsive 8px 14px;
                 }
             }
 

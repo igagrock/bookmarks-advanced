@@ -6,7 +6,7 @@ export default
         var _this = this;
         var log = $log;
         _this.bookMarks = [];
-
+        _this.parentBookmark = {};
 
         _this.getFolderLength = function (obj) {
             return bookmarkService.getChildrenFolderLength(obj);
@@ -37,6 +37,14 @@ export default
           
         }
 
+        var getParentBookmark = (parentId)=>{
+            bookmarkService.fetchBookMark(parentId).then(
+                (result)=>{
+                    $scope.$apply(() => {
+                       _this.parentBookmark = result[parentId];
+                    });
+                })
+        }
 
         var getBookMarks = function (id) {
 
@@ -52,6 +60,7 @@ export default
                 });
         }
 
+        getParentBookmark($stateParams.id);
         getBookMarks($stateParams.id);
         
         // browser.bookmarks.onChanged.addListener(()=>{

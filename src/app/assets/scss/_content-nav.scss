@@ -15,24 +15,32 @@ div.content-nav {
         width: 18%;
         padding: 1rem;
         background-color: #333;
-        height: 230px;
+        height: 150px;
         z-index: 1;
+
+        ul{
+            li{
+                button{
+                    font-size: responsive 10px 12px;
+                }
+            }
+        }
     }
 
     div.nav-search {
         position: fixed;
         width: 18%;
         height: 50px;
-        top: 230px;
+        top: 150px;
         z-index: 1;
         background-color: #333;
 
-        input[type=search]{
-            width:100%;
+        input[type=search] {
+            width: 100%;
             height: 50px;
-            border:1px solid #333;
+            border: 1px solid #333;
             padding-left: 1rem;
-            font-size: 16px;
+            font-size: responsive 8px 12px;
             font-family: $PtSans400;
             background-color: $inputBackground;
         }
@@ -41,7 +49,7 @@ div.content-nav {
     div.nav-menu {
         // margin: 1rem;
         position: relative;
-        top: 280px;
+        top: 200px;
         padding: 2rem;
         background-color: $inputBackground;
         height: auto;
@@ -115,28 +123,17 @@ div.content-nav {
         /** move**/
         ul.move {
             li {
-                padding-top: .5rem;
-                padding-bottom: .5rem;
+                padding-top: .2rem;
+                padding-bottom:.2rem;
+                padding-right: .2rem;
                 cursor: pointer;
-                margin-top: .5rem;
+                // margin-top: .5rem;
                 margin-bottom: .5rem;
-                
+
                 span.text {
-                    font-size: responsive 12px 16px;
+                    font-size: responsive 8px 12px;
                     font-family: $PtSans400;
                     color: $brandColor;
-                }
-            }
-
-            li.active {
-                background-color: $brandColor;
-                padding: 1rem;
-                transition: background-color 0.5s ease-in-out;
-                transition: padding-left 0.2s ease-in;
-                border-radius: 5px;
-
-                span.text {
-                    color: #f1f1f1;
                 }
             }
 
@@ -144,10 +141,10 @@ div.content-nav {
                 border: 1px solid red;
             }
 
-            li:hover {
+            li:hover,
+            li.active {
                 background-color: $brandColor;
-                padding: 1rem;
-                
+                padding-left: 1rem;
                 transition: background-color 0.5s ease-in-out;
                 transition: padding-left 0.2s ease-in;
                 border-radius: 5px;

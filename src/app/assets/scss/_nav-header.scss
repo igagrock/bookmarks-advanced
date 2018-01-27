@@ -3,13 +3,11 @@
     a.navbar-brand {
         width: 100%;
         padding: 2rem;
-        padding-top: 3rem;
-        height: 150px;
         color: $brandColor;
         text-transform: capitalize;
         letter-spacing: 0.025rem;
         font-family: $PtSans400;
-        font-size: responsive !important;
+        font-size: responsive 10px 16px;
     }
 
     // button {

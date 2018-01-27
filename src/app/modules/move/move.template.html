@@ -7,7 +7,7 @@
 
         <ul class="list-group">
             <li>
-                <button type="button" class="btn btn-secondary" data-ng-click="mvCtrl.loadPreviousState(null)">close</button>
+                <button type="button" class="btn btn-secondary" data-ng-click="mvCtrl.loadPreviousState(mvCtrl.parentFolder.id)">close</button>
             </li>
         </ul>
     </div>
@@ -19,14 +19,14 @@
             <li class="media active">
                 <img class="d-flex mr-3" src="../../assets/icons/folder-24.svg" alt="Generic placeholder image">
                 <div class="media-body ">
-                    <span class="mt-0 mb-1 text ">{{mvCtrl.parentFolder.title}}</span>
+                    <span class="mt-0 mb-1 text ">{{mvCtrl.parentFolder.title | limitTo : 15 }}{{mvCtrl.parentFolder.title.length > 15 ?'..':'' }}</span>
 
                 </div>
             </li>
             <li class="media" data-ng-repeat=" folder in mvCtrl.folders | filter:query" data-ng-click="mvCtrl.selectParent(folder.id)">
                 <img class="d-flex mr-3" src="../../assets/icons/folder-24.svg" alt="image">
                 <div class="media-body ">
-                    <span class="mt-0 mb-1 text ">{{folder.title}}</span>
+                    <span class="mt-0 mb-1 text ">{{folder.title |limitTo : 15}}{{ folder.title.length >15 ?'..':''}}</span>
 
                 </div>
                

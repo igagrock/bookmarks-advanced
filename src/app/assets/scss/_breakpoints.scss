@@ -1,57 +1,74 @@
-$xs_nav_width : 35%;
+$xs_nav_width: 35%;
 $xs_content-width: 65%;
 $sm_nav_width: 35%;
 $sm_content_width: 65%;
 $md_nav_width: 30%;
-$md_content-width:70%;
+$md_content-width: 70%;
 $lg_nav_width: 18%;
-$lg_content_width:82%;
-$xl_nav_width:18%;
-$xl_content-width:82%;
+$lg_content_width: 82%;
+$xl_nav_width: 18%;
+$xl_content-width: 82%;
 
-@include media-breakpoint-up(xs) { 
-    div.side-nav{
+@include media-breakpoint-up(xs) {
+    div.side-nav {
         width: $xs_nav_width;
     }
-    div.content{
+
+    div.content {
         width: $xs_content-width;
         left: $xs_nav_width;
     }
- }
- @include media-breakpoint-up(sm) { 
-    div.side-nav{
+}
+
+
+@include media-breakpoint-up(sm) {
+    div.side-nav {
         width: $sm_nav_width;
     }
-    div.content{
+
+    div.content {
         width: $sm_content_width;
         left: $sm_nav_width;
     }
 }
- @include media-breakpoint-up(md) { 
-    div.side-nav{
-        width: $md_nav_width
+
+
+@include media-breakpoint-up(md) {
+    div.side-nav {
+        width: $md_nav_width;
     }
-    div.content{
+
+    div.content {
         width: $md_content-width;
         left: $md_nav_width;
     }
- }
-@include media-breakpoint-up(lg) { 
-    div.side-nav{
+}
+
+
+@include media-breakpoint-up(lg) {
+    div.side-nav {
         width: $lg_nav_width;
     }
-    div.content{
+
+    div.content {
         width: $lg_content_width;
         left: $lg_nav_width;
     }
- }
 
-@include media-breakpoint-up(xl) { 
+    div.content-nav {
+        div.nav-header {
+            height: 100px;
+        }
+    }
+}
 
-    div.side-nav{
+
+@include media-breakpoint-up(xl) {
+    div.side-nav {
         width: $xl_nav_width;
     }
-    div.content{
+
+    div.content {
         width: $xl_content-width;
         left: $xl_nav_width;
     }

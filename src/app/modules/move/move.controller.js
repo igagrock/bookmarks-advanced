@@ -24,8 +24,9 @@ export default class moveController {
             });
         }
         _this.loadPreviousState = (id) => {
+            log.info("loadPreviousState called with id = ", id);
             var parentId = id ? id : $stateParams.id;
-            bookmarkService.loadCardState(id);
+            bookmarkService.loadCardState(parentId);
         }
 
         _this.selectParent =(parentId)=>{
