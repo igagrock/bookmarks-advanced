@@ -9,6 +9,9 @@ export default
 	constructor($state, $log) {
 		var _this = this;
 		var log = $log;
+
+		_this.shouldNavBeUpdated = false;
+
 		var flattenArray = [];
 		var folders = {};
 		_this.loadCardState = (id) => {
@@ -18,6 +21,10 @@ export default
 		_this.loadEditState = (id) => {
 			log.info("loadEditState called..");
 			$state.go('cards.edit', { eId: id });
+		}
+		_this.loadMoveState = (id) =>{
+			log.info("loadMoveState called..");
+			$state.go('cards.move',{ mId: id });
 		}
 		_this.fetchBookmarks = function (id) {
 
@@ -39,10 +46,10 @@ export default
 					return _reduce(arr[0].children, (result, ele) => {
 						if (ele.type == 'folder') {
 							log.info("bkmk ", ele);
-							result.push(ele);
+							result[ele.id] = ele;
 						}
 						return result;
-					}, []);
+					}, {});
 				}
 			);
 		}
@@ -59,7 +66,7 @@ export default
 		 * fetch the matching bookmark and convert it into a map[id] <= bookmark 
 		 * @param {*} id  bookmark id
 		 */
-		_this.fetchBookMark = function (id) {
+		_this.fetchBookMark =  (id) =>{
 			return browser.bookmarks.get(id)
 				.then((b) => {
 					return _reduce(b, (r, e) => {
@@ -70,11 +77,18 @@ export default
 				});
 		}
 
-		_this.updateBookMark = function (bookmark) {
+		_this.updateBookMark =  (bookmark)=> {
 			return browser.bookmarks.update(bookmark.id, {
 				title: bookmark.title,
 				url: bookmark.url
 			});
+		}
+		/**
+		 * keeping the index = = o so that the bookmark will be at top of the new parent
+		 * @param {*} obj 
+		 */
+		_this.moveBookmark = (obj)=>{
+			return browser.bookmarks.move(obj.id , { parentId: obj.parentId , index : 0 });
 		}
 
 

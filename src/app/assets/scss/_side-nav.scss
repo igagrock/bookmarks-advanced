@@ -1,0 +1,129 @@
+div.side-nav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(41, 43, 43);
+    overflow-x: hidden;
+    box-shadow: 0 2px 2px 0 rgba(177, 39, 39, 0.14), 0 1px 5px 0 rgba(209, 24, 24, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+
+    div.nav-menu {
+        margin-top: 2rem;
+
+        div.card {
+            width: 100%;
+            background-color: transparent;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-radius: 0px;
+
+            div.card-header:first-child {
+                border-radius: 0px;
+            }
+
+            div.card-header {
+                background-color: #333;
+                border-width: 0px;
+                cursor: pointer;
+
+                span.text {
+                    padding-left: .5rem;
+                    font-size: 16px;
+                    text-transform: capitalize;
+                    color: $brandColor;
+                    font-family: $PtSans400;
+                }
+
+                span.badge {
+                    background-color: $brandColor;
+                    float: right;
+                    font-size: 16px;
+                }
+            }
+
+         
+            div.card-header:hover ,
+            div.card-header.active{
+                background-color: $brandColor;
+                color: #f1f1f1;
+
+                span.text {
+                    color: #f1f1f1;
+                }
+
+                span.badge {
+                    background-color: #f1f1f1;
+                    color: $brandColor;
+                }
+            }
+
+            ul.children {
+                li.list-group-item {
+                    background-color: #222;
+                    padding-left: 2rem;
+                    cursor: pointer;
+
+                    span.text {
+                        color: $brandColor;
+                        width: 100%;
+                        margin-left: 1rem;
+                        font-size: .8rem;
+                        font-family: $PtSans400;
+                    }
+
+                    span.badge {
+                        background-color: $brandColor;
+                        float: right;
+                    }
+                }
+
+                .list-group-item:first-child, .list-group-item:last-child {
+                    border-radius: 0px;
+                }
+
+                li.list-group-item:hover {
+                    background-color: $brandColor;
+
+                    span.text {
+                        color: #f1f1f1;
+                    }
+
+                    span.badge {
+                        background-color: #f1f1f1;
+                        color: $brandColor;
+                    }
+                }
+            }
+        }
+
+        div.card:hover {
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.25), 0 0 0 rgba(0, 0, 0, 0.22);
+        }
+
+        div.card.ng-enter,
+        div.card.ng-leave {
+            animation-duration: .3s;
+        }
+
+        div.card.ng-leave {
+            animation-name: bounceOut;
+        }
+
+        div.card.ng-enter {
+            animation-name: bounceIn;
+        }
+
+        ul.move {
+            li {
+                h5 {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+div.side-nav > .nav-header {
+    background-color: $bgBlack;
+}

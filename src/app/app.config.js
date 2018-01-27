@@ -17,8 +17,11 @@ export default
                 url:"/edit/:eId",
                 component: 'edit'
             })
+            .state("cards.move",{
+                url:"/move/:mId",
+                component: 'move'
+            })
             ;
 
-        //  $urlRouterProvider.when('','/all');
-        //  $urlRouterProvider.otherwise('all');
+          $urlRouterProvider.when('','/cards/');
     }

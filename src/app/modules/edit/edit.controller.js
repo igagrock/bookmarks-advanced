@@ -4,7 +4,7 @@ export default
     /*@ngInject */
 
     class editController {
-    constructor($scope, $log, $timeout , $stateParams, bookmarkService) {
+    constructor($scope,$rootScope , $log, $timeout , $stateParams, bookmarkService, events) {
         var _this = this;
         var log = $log;
         _this.bookmark = {};
@@ -40,6 +40,7 @@ export default
                 .then(
                 (obj) => {
                     _this.onBookmarkUpdate({id: _this.bookmark.parentId});
+                    $rootScope.$broadcast(events.type.UPDATE, {});
                     _this.loadPreviousState();
                  },
                 (err) => {

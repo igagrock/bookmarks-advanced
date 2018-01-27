@@ -2,12 +2,19 @@
 
     <div class="nav-header ">
         <a class="navbar-brand" href="#">
-            <img src="../../assets/icons/edit_h.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-            Edit 
+            <img src="../../assets/icons/edit_h.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Edit
         </a>
+
+        <ul class="list-group">
+            <li>
+                <button type="button" class="btn btn-secondary" data-ng-click="edCtrl.loadPreviousState()">close</button>
+                <button type="button" class="btn btn-success" data-ng-show="edCtrl.isTitleEditable || edCtrl.isUrlEditable || edCtrl.isParentChanged"
+                    data-ng-click="edCtrl.update()">update</button>
+            </li>
+        </ul>
     </div>
 
-    <div class=" nav-menu ">
+    <div class=" nav-menu">
 
         <div class="row ">
             <ul class="list-group list-group-flush">
@@ -19,32 +26,24 @@
                 </li>
                 <li class="list-group-item">
 
-                    <span  class="title" data-ng-hide="edCtrl.isTitleEditable"  data-ng-click="edCtrl.toggleTileEdit()">{{edCtrl.bookmark.title}}</span>
-                    <textarea  class="form-control form-control-lg" data-ng-show="edCtrl.isTitleEditable" type="text" data-ng-model="edCtrl.bookmark.title"></textarea>
+                    <span class="title" data-ng-hide="edCtrl.isTitleEditable" data-ng-click="edCtrl.toggleTileEdit()">{{edCtrl.bookmark.title}}</span>
+                    <textarea class="form-control form-control-lg" data-ng-show="edCtrl.isTitleEditable" type="text" data-ng-model="edCtrl.bookmark.title"></textarea>
                 </li>
                 <li data-ng-show="edCtrl.bookmark.type == 'bookmark'">
                     <label for="">url:</label>
                 </li>
                 <li class="list-group-item" data-ng-show="edCtrl.bookmark.type == 'bookmark'">
 
-                    <span class="url" data-ng-hide="edCtrl.isUrlEditable"  data-ng-click="edCtrl.toggleUrlEdit()">{{edCtrl.bookmark.url}}</span>
-                    <textarea class="form-control" data-ng-show="edCtrl.isUrlEditable"  type="text" data-ng-model="edCtrl.bookmark.url"></textarea>
+                    <span class="url" data-ng-hide="edCtrl.isUrlEditable" data-ng-click="edCtrl.toggleUrlEdit()">{{edCtrl.bookmark.url}}</span>
+                    <textarea class="form-control" data-ng-show="edCtrl.isUrlEditable" type="text" data-ng-model="edCtrl.bookmark.url"></textarea>
                 </li>
-                <li>
-                        <label for="">Parent Folder:</label>
+                <!-- <li>
+                    <label for="">Parent Folder:</label>
                 </li>
                 <li class="list-group-item">
-                    <!-- <input type="text" data-ng-model="edCtrl.parentBookmark"> -->
-                    <select class="classic" ng-model="edCtrl.parentBookmark" ng-options="folder.title for folder in edCtrl.folders"
-                        data-ng-change="edCtrl.onParentChange()"
-                    ></select>
-                </li>
-                <li>
-                    <button type="button" class="btn btn-secondary" data-ng-click="edCtrl.loadPreviousState()">close</button>
-                    <button type="button" class="btn btn-success" data-ng-show="edCtrl.isTitleEditable || edCtrl.isUrlEditable || edCtrl.isParentChanged"
-                    data-ng-click="edCtrl.update()"
-                    >update</button>
-                </li>
+                    <select class="classic" ng-model="edCtrl.parentBookmark" ng-options="folder.title for folder in edCtrl.folders" data-ng-change="edCtrl.onParentChange()"></select>
+                </li> -->
+
             </ul>
         </div>
     </div>

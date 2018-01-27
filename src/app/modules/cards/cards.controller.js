@@ -23,6 +23,10 @@ export default
             event.stopPropagation();
             bookmarkService.loadEditState(id);
         }
+        _this.moveBookmark = (event,id) =>{
+            event.stopPropagation();
+            bookmarkService.loadMoveState(id);
+        }
 
         _this.refreshBookmarks = (id)=>{
             log.info("refreshBookmarks called.. ");

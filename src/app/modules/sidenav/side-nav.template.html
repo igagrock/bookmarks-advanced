@@ -11,8 +11,10 @@
     
         <div class="card" data-ng-repeat=" ele in $ctrl.parentBookMarks">
           <!-- <a ui-sref="bookmarks.child({id: ele.id})"> -->
-            <div class="card-header" role="tab" id="{{'heading'+ele.id}}" data-toggle="collapse" data-parent="#accordion" href="{{'#collapse'+ele.id}}" aria-expanded="false"
-            aria-controls="collapseOne" data-ng-click="$ctrl.routeTo(ele.id)">
+            <div class="card-header" data-ng-class="{'active' : ele.id == $ctrl.selectedMenu.id}" 
+            role="tab" id="{{'heading'+ele.id}}" data-toggle="collapse" data-parent="#accordion" 
+            href="{{'#collapse'+ele.id}}" aria-expanded="false"
+            aria-controls="collapseOne" data-ng-click="$ctrl.routeTo(ele.id , false)">
             <img class="lg" src="../../assets/icons/folder-24.svg" alt="edit">
             <span class="text">{{ele.title | limitTo: 20 }} {{ele.title.length > 25 ? '...': ''}}</span>
 
@@ -21,11 +23,11 @@
         </div>
           <!-- </a> -->
 
-            <div id="{{'collapse'+ele.id}}" class="collapse" role="tabpanel" aria-labelledby="{{'heading'+ele.id}}">
+            <div id="{{'collapse'+ele.id}}" class="collapse "  data-ng-class="{'show' : ele.id == $ctrl.selectedMenu.id}" role="tabpanel" aria-labelledby="{{'heading'+ele.id}}">
                 <ul class="list-group children">
                     <li class="  list-group-item d-flex justify-content-between align-items-center"
                     data-ng-repeat="ch in ele.children" data-ng-if="ch.type == 'folder'"  
-                    data-ng-click="$ctrl.routeTo(ch.id)"
+                    data-ng-click="$ctrl.routeTo(ch.id, true)"
                     >
                         <img class="lg" src="../../assets/icons/folder-24.svg" alt="edit">
                         <span class="text">{{ch.title | limitTo : 25 }}{{ch.title.length > 25 ?'..':'' }}</span>

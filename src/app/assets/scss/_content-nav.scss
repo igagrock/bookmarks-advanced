@@ -1,0 +1,161 @@
+/** vertical nav **/
+div.content-nav {
+    height: 100%;
+    width: 18%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 82%;
+    background-color: rgb(41, 43, 43);
+    overflow-x: hidden;
+    box-shadow: -1px 0px 2px 0px rgba(0, 0, 0, 0.75);
+
+    div.nav-header {
+        position: fixed;
+        width: 18%;
+        padding: 1rem;
+        background-color: #333;
+        height: 230px;
+        z-index: 1;
+    }
+
+    div.nav-search {
+        position: fixed;
+        width: 18%;
+        height: 50px;
+        top: 230px;
+        z-index: 1;
+        background-color: #333;
+
+        input[type=search]{
+            width:100%;
+            height: 50px;
+            border:1px solid #333;
+            padding-left: 1rem;
+            font-size: 16px;
+            font-family: $PtSans400;
+            background-color: $inputBackground;
+        }
+    }
+
+    div.nav-menu {
+        // margin: 1rem;
+        position: relative;
+        top: 280px;
+        padding: 2rem;
+        background-color: $inputBackground;
+        height: auto;
+        width: 100%;
+
+        ul.list-group {
+            width: 100%;
+
+            li {
+                label {
+                    font-size: responsive;
+                    font-weight: 800;
+                    font-family: $PtSans400;
+                    text-transform: capitalize;
+                    color: $brandColor;
+                }
+            }
+
+            li.list-group-item {
+                margin-bottom: 2rem;
+                background-color: $inputBackground;
+
+                textarea {
+                    background-color: $inputBackground;
+                    border: 2px solid $brandColor;
+                    color: #f1f1f1;
+                    font-size: 16px;
+                    font-family: $PtSans400;
+                    appearance: none;
+                    min-height: 100px;
+                    word-break: break-all;
+                    overflow-x: scroll;
+                }
+
+                span, select {
+                    color: #f1f1f1;
+                    font-size: 16px;
+                    font-family: $PtSans400;
+                    border: 1px solid $brandColor;
+                    padding: .5rem;
+                    display: block;
+                    border-radius: 5px;
+                    min-width: 100%;
+                    cursor: pointer;
+                }
+
+                select.classic {
+                    width: 100%;
+                    background-color: $inputBackground;
+                    outline: none;
+                    appearance: none;
+                    box-sizing: border-box;
+                    background-image: linear-gradient(45deg, transparent 50%, #f1f1f1 50%), linear-gradient(135deg, #f1f1f1 50%, transparent 50%), linear-gradient(to right, $brandColor, $brandColor);
+                    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+                    background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+                    background-repeat: no-repeat;
+
+                    option {
+                        color: #f1f1f1;
+                        font-size: 12px;
+                        font-family: $PtSans400;
+                        background-color: $brandColor;
+                        padding: .2rem;
+                        border: none;
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        /** move**/
+        ul.move {
+            li {
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+                cursor: pointer;
+                margin-top: .5rem;
+                margin-bottom: .5rem;
+                
+                span.text {
+                    font-size: responsive 12px 16px;
+                    font-family: $PtSans400;
+                    color: $brandColor;
+                }
+            }
+
+            li.active {
+                background-color: $brandColor;
+                padding: 1rem;
+                transition: background-color 0.5s ease-in-out;
+                transition: padding-left 0.2s ease-in;
+                border-radius: 5px;
+
+                span.text {
+                    color: #f1f1f1;
+                }
+            }
+
+            li:active {
+                border: 1px solid red;
+            }
+
+            li:hover {
+                background-color: $brandColor;
+                padding: 1rem;
+                
+                transition: background-color 0.5s ease-in-out;
+                transition: padding-left 0.2s ease-in;
+                border-radius: 5px;
+
+                span.text {
+                    color: #f1f1f1;
+                }
+            }
+        }
+    }
+}

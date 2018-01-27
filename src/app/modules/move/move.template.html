@@ -1,0 +1,38 @@
+<div class=" content-nav">
+
+    <div class="nav-header ">
+        <a class="navbar-brand" href="#">
+            <img src="../../assets/icons/edit_h.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Move
+        </a>
+
+        <ul class="list-group">
+            <li>
+                <button type="button" class="btn btn-secondary" data-ng-click="mvCtrl.loadPreviousState(null)">close</button>
+            </li>
+        </ul>
+    </div>
+    <div class="nav-search">
+        <input type="search" data-ng-model="query" placeholder="search folders" autofocus>
+    </div>
+    <div class=" nav-menu ">
+        <ul class="list-unstyled move">
+            <li class="media active">
+                <img class="d-flex mr-3" src="../../assets/icons/folder-24.svg" alt="Generic placeholder image">
+                <div class="media-body ">
+                    <span class="mt-0 mb-1 text ">{{mvCtrl.parentFolder.title}}</span>
+
+                </div>
+            </li>
+            <li class="media" data-ng-repeat=" folder in mvCtrl.folders | filter:query" data-ng-click="mvCtrl.selectParent(folder.id)">
+                <img class="d-flex mr-3" src="../../assets/icons/folder-24.svg" alt="image">
+                <div class="media-body ">
+                    <span class="mt-0 mb-1 text ">{{folder.title}}</span>
+
+                </div>
+               
+            </li>
+
+        </ul>
+
+    </div>
+</div>
