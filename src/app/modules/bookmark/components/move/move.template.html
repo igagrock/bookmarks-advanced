@@ -2,7 +2,7 @@
 
     <div class="nav-header ">
         <a class="navbar-brand" href="#">
-            <img src="../../assets/icons/edit_h.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Move
+            <img src="../../../../assets/icons/edit_h.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Move
         </a>
 
         <ul class="list-group">
@@ -17,14 +17,14 @@
     <div class=" nav-menu ">
         <ul class="list-unstyled move">
             <li class="media active">
-                <img class="d-flex mr-3" src="../../assets/icons/folder-24.svg" alt="Generic placeholder image">
+                <img class="d-flex mr-3" src="../../../../assets/icons/folder-24.svg" alt="Generic placeholder image">
                 <div class="media-body ">
                     <span class="mt-0 mb-1 text ">{{mvCtrl.parentFolder.title | limitTo : 15 }}{{mvCtrl.parentFolder.title.length > 15 ?'..':'' }}</span>
 
                 </div>
             </li>
             <li class="media" data-ng-repeat=" folder in mvCtrl.folders | filter:query" data-ng-click="mvCtrl.selectParent(folder.id)">
-                <img class="d-flex mr-3" src="../../assets/icons/folder-24.svg" alt="image">
+                <img class="d-flex mr-3" src="../../../../assets/icons/folder-24.svg" alt="image">
                 <div class="media-body ">
                     <span class="mt-0 mb-1 text ">{{folder.title |limitTo : 15}}{{ folder.title.length >15 ?'..':''}}</span>
 

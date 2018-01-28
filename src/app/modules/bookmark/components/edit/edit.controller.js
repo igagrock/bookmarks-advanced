@@ -44,7 +44,7 @@ export default
                     _this.loadPreviousState();
                  },
                 (err) => {
-                    alert("error happened during update", err);
+                    alert("error happened during update");
                  }
                 );
         }
@@ -80,21 +80,7 @@ export default
                     });
                 });
         }
-        // /**
-        //  * TBD 
-        //  * Check the issue related to ngmodel for select not working for particula object froms different data sets
-        //  */
-        // var getParentBookmark = function () {
-        //     bookmarkService.fetchBookMark(_this.bookmark.parentId)
-        //         .then((arrObjs) => {
-        //             $scope.$apply(() => {
-        //                 //     log.info("obj of parent = ", arrObjs);
-        //                 //     var x = [arrObjs[_this.bookmark.parentId]];
-        //                 //    _this.parentBookmark = x[0];
-        //                 //     log.info("parent bookmark =  ",_this.parentBookmark);
-        //             });
-        //         });
-        // }
+
         getBookmark();
         getBookMarkFolders();
         getAllFolders();

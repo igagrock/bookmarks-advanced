@@ -27,6 +27,10 @@ export default
             event.stopPropagation();
             bookmarkService.loadMoveState(id);
         }
+        _this.deleteBookmark = (event, id) =>{
+            event.stopPropagation();
+            bookmarkService.loadDeleteState(id);
+        }
 
         _this.refreshBookmarks = (id)=>{
             log.info("refreshBookmarks called.. ");

@@ -9,6 +9,7 @@ export default
 	constructor($state, $log) {
 		var _this = this;
 		var log = $log;
+		var bmkApi = browser.bookmarks;
 
 		_this.shouldNavBeUpdated = false;
 
@@ -26,10 +27,14 @@ export default
 			log.info("loadMoveState called..");
 			$state.go('cards.move',{ mId: id });
 		}
+		_this.loadDeleteState = (id) => {
+			log.info("loadDeleteState called ..");
+			$state.go('cards.del',{dId: id});
+		}
 		_this.fetchBookmarks = function (id) {
 
 			log.info("value for id = ", id);
-			return browser.bookmarks.getChildren(id)
+			return bmkApi.getChildren(id)
 				.then((resultArray) => {
 					return _reduce(resultArray, function (result, ele) {
 						if (ele.type == 'folder' || ele.type == 'bookmark') {
@@ -41,7 +46,7 @@ export default
 				);
 		}
 		_this.getParentBookMarks = function () {
-			return browser.bookmarks.getTree().then(
+			return bmkApi.getTree().then(
 				(arr) => {
 					return _reduce(arr[0].children, (result, ele) => {
 						if (ele.type == 'folder') {
@@ -54,7 +59,7 @@ export default
 			);
 		}
 		_this.fetchBookMarkFolders = function () {
-			return browser.bookmarks.getTree().then(
+			return bmkApi.getTree().then(
 				(arr) => {
 					log.info("arr =", arr);
 					return getFolders(arr[0].children);
@@ -67,7 +72,7 @@ export default
 		 * @param {*} id  bookmark id
 		 */
 		_this.fetchBookMark =  (id) =>{
-			return browser.bookmarks.get(id)
+			return bmkApi.get(id)
 				.then((b) => {
 					return _reduce(b, (r, e) => {
 						r[e.id] = e;
@@ -78,7 +83,7 @@ export default
 		}
 
 		_this.updateBookMark =  (bookmark)=> {
-			return browser.bookmarks.update(bookmark.id, {
+			return bmkApi.update(bookmark.id, {
 				title: bookmark.title,
 				url: bookmark.url
 			});
@@ -88,9 +93,15 @@ export default
 		 * @param {*} obj 
 		 */
 		_this.moveBookmark = (obj)=>{
-			return browser.bookmarks.move(obj.id , { parentId: obj.parentId , index : 0 });
+			return bmkApi.move(obj.id , { parentId: obj.parentId , index : 0 });
 		}
 
+		_this.removeBookmark = (obj) =>{
+			if(obj.type === 'folder'){
+			 return	bmkApi.removeTree(obj.id);
+			}
+			else return bmkApi.remove(obj.id);
+		}
 
 		_this.getChildrenFolderLength = function (obj) {
 			var len = 0;

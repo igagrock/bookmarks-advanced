@@ -21,6 +21,10 @@ export default
                 url:"/move/:mId",
                 component: 'move'
             })
+            .state("cards.del",{
+                url:"/del/:dId",
+                component: 'delete'
+            })
             ;
 
           $urlRouterProvider.when('','/cards/');

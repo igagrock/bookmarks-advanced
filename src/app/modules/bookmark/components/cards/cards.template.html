@@ -3,7 +3,7 @@
         <div class="col-3  card-view-heading">
                 <ul class="list-unstyled">
                         <li class="media">
-                            <img class="d-flex mr-3" src="../../assets/icons/folder.svg" alt="Generic placeholder image">
+                            <img class="d-flex mr-3" src="../../../../assets/icons/folder.svg" alt="Generic placeholder image">
                             <div class="media-body">
                                 <span class=" title">{{lbc.parentBookmark.title}}</span>
                             </div>
@@ -20,13 +20,13 @@
             data-ng-repeat="ele in lbc.bookMarks | filter:query"
             on-update="lbc.refreshBookmarks(id)" >
             <div class="card-poster">
-                <img src="../../assets/icons/menu.svg" alt="edit" id="context-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="../../../../assets/icons/menu.svg" alt="edit" id="context-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                 <div class="dropdown-menu " aria-labelledby="context-menu">
                     <button class="dropdown-item" type="button" data-ng-click="lbc.editBookmark($event, ele.id)">Edit</button>
 
                     <button class="dropdown-item" type="button" data-ng-click="lbc.moveBookmark($event, ele.id)">move</button>
-                    <button class="dropdown-item" type="button">delete</button>
+                    <button class="dropdown-item" type="button" data-ng-click="lbc.deleteBookmark($event, ele.id)">delete</button>
                 </div>
 
 
