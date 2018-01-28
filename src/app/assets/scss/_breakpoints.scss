@@ -2,12 +2,15 @@ $xs_nav_width: 35%;
 $xs_content-width: 65%;
 $sm_nav_width: 35%;
 $sm_content_width: 65%;
-$md_nav_width: 30%;
-$md_content-width: 70%;
+$md_nav_width: 25%;
+$md_content-width: 75%;
 $lg_nav_width: 18%;
 $lg_content_width: 82%;
 $xl_nav_width: 18%;
 $xl_content-width: 82%;
+
+$content-nav-width: 25%;
+$content-nav-left: 75%;
 
 @include media-breakpoint-up(xs) {
     div.side-nav {
@@ -42,6 +45,13 @@ $xl_content-width: 82%;
         width: $md_content-width;
         left: $md_nav_width;
     }
+
+    div.content-nav{
+        width: $content-nav-width;
+        left: $content-nav-left;
+    }
+
+    
 }
 
 
@@ -73,3 +83,10 @@ $xl_content-width: 82%;
         left: $xl_nav_width;
     }
 }
+
+@media only screen and (max-width: 1360px) {
+  
+
+
+}
+
