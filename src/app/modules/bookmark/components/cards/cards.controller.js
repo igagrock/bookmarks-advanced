@@ -6,7 +6,7 @@ export default
         var _this = this;
         var log = $log;
         _this.bookMarks = [];
-
+        _this.parentBookmark = {};
 
         _this.getFolderLength = function (obj) {
             return bookmarkService.getChildrenFolderLength(obj);
@@ -23,16 +23,32 @@ export default
             event.stopPropagation();
             bookmarkService.loadEditState(id);
         }
+        _this.moveBookmark = (event,id) =>{
+            event.stopPropagation();
+            bookmarkService.loadMoveState(id);
+        }
+        _this.deleteBookmark = (event, id) =>{
+            event.stopPropagation();
+            bookmarkService.loadDeleteState(id);
+        }
 
         _this.refreshBookmarks = (id)=>{
             log.info("refreshBookmarks called.. ");
             _this.bookMarks.splice(0, _this.bookMarks.length);
             $timeout(()=>{
                 getBookMarks(id);
-            },100);
+            },300);
           
         }
 
+        var getParentBookmark = (parentId)=>{
+            bookmarkService.fetchBookMark(parentId).then(
+                (result)=>{
+                    $scope.$apply(() => {
+                       _this.parentBookmark = result[parentId];
+                    });
+                })
+        }
 
         var getBookMarks = function (id) {
 
@@ -48,6 +64,7 @@ export default
                 });
         }
 
+        getParentBookmark($stateParams.id);
         getBookMarks($stateParams.id);
         
         // browser.bookmarks.onChanged.addListener(()=>{

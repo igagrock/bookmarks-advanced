@@ -17,8 +17,15 @@ export default
                 url:"/edit/:eId",
                 component: 'edit'
             })
+            .state("cards.move",{
+                url:"/move/:mId",
+                component: 'move'
+            })
+            .state("cards.del",{
+                url:"/del/:dId",
+                component: 'delete'
+            })
             ;
 
-        //  $urlRouterProvider.when('','/all');
-        //  $urlRouterProvider.otherwise('all');
+          $urlRouterProvider.when('','/cards/');
     }

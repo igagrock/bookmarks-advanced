@@ -1,0 +1,19 @@
+<div class=" content-nav">
+
+    <div class="nav-header ">
+        <a class="navbar-brand" href="#">
+            <img src="../../../../assets/icons/delete.svg" width="30" height="25" class="d-inline-block align-top" alt=""> Delete
+        </a>
+       
+        <ul class="list-group">
+            <li class="list-item">
+                <h5>{{delCtrl.bookmark.title}}</h5>
+            </li>
+            <li class="list-item">
+                <button type="button" class="btn btn-secondary" data-ng-click="delCtrl.loadPreviousState()">close</button>
+                <button type="button" class="btn btn-danger" data-ng-click="delCtrl.delete(delCtrl.bookmark)">delete</button>
+            </li>
+        </ul>
+    </div>
+
+</div>

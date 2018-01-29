@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-3  card-view-heading">
+                <ul class="list-unstyled">
+                        <li class="media">
+                            <img class="d-flex mr-3" src="../../../../assets/icons/folder.svg" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <span class=" title">{{lbc.parentBookmark.title}}</span>
+                            </div>
+                        </li>
+                    </ul>
+        </div>
+        <div class="col-6 card-filter">
+            <input type="search" data-ng-model="query" placeholder="search {{lbc.parentBookmark.title | lowercase}}">
+        </div>
+    </div>
+    <div class="row">
+        <!-- card start -->
+        <div class="card card-wrapper mt-3 ml-3 mr-3" data-ng-class="{'bg-grey': ele.type =='folder'}" 
+            data-ng-repeat="ele in lbc.bookMarks | filter:query"
+            on-update="lbc.refreshBookmarks(id)" >
+            <div class="card-poster">
+                <img src="../../../../assets/icons/menu.svg" alt="edit" id="context-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <div class="dropdown-menu " aria-labelledby="context-menu">
+                    <button class="dropdown-item" type="button" data-ng-click="lbc.editBookmark($event, ele.id)">Edit</button>
+
+                    <button class="dropdown-item" type="button" data-ng-click="lbc.moveBookmark($event, ele.id)">move</button>
+                    <button class="dropdown-item" type="button" data-ng-click="lbc.deleteBookmark($event, ele.id)">delete</button>
+                </div>
+
+
+            </div>
+            <div class="card-body" data-ng-click="lbc.openBookMark(ele)">
+                <div class="card-desc mb-2">
+                    <span class="title" data-ng-class="{'text-white': ele.type =='folder'}">{{ele.title | limitTo : 30}}{{ ele.title.length > 30 ? '...' : ''}}</span>
+
+                </div>
+            </div>
+        </div>
+        <!-- card end -->
+
+    </div>
+</div>
+<ui-view on-bookmark-update="lbc.refreshBookmarks(id)"></ui-view>

@@ -1,0 +1,45 @@
+
+.navbar {
+    form.form-inline {
+        position: relative;
+        left: 2%;
+
+        input[type=search] {
+            border: 1px solid $brandColor;
+            border-radius: 20px;
+            width: 300px;
+            background-color: $inputBackground;
+            color: $inputTextColor;
+            padding: .45rem;
+            padding-left: 30px;
+            transition: linear 2s ease-out;
+        }
+
+        input[type=search]:focus {
+            border: 1px solid $inputhoverBorder;
+            box-shadow: 1px 1px 10px 0px $inputhoverBorder;
+        }
+    }
+
+    ul {
+        list-style: none;
+        right: 100px;
+        position: relative;
+        padding: 0px;
+        margin: 0px;
+
+        li {
+            display: inline;
+            font-size: 20px;
+            margin: 0px;
+
+            button {
+                background-color: transparent;
+                border-width: 0px;
+
+                // margin-top: 10px;
+           
+            }
+        }
+    }
+}

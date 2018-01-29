@@ -1,6 +1,6 @@
 
-import  './assets/scss/app.scss';
-import  './assets/css/app.css';
+import './assets/scss/app.scss';
+import './assets/css/app.css';
 import $ from 'jquery';
 import angular from 'angular';
 import ngAnimate from 'angular-animate';
@@ -12,9 +12,9 @@ import config from './app.config';
 
 import 'bootstrap';
 /*@ngInject */
-angular.module('app',['ui.router','ngAnimate','bookmarkModule'])
+angular.module('app', ['ui.router', 'ngAnimate', 'bookmarkModule'])
 	.config(config)
-	.run(function(){
+	.run(function () {
 		console.log("it is running... ");
 	});
 

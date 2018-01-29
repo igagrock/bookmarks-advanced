@@ -1,0 +1,74 @@
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+    background-color: white;
+    border: 1px solid #333;
+}
+
+.btn-rect {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+    background-color: white;
+    border: 1px solid #333;
+}
+
+.btn-rect > img {
+    width: 50px;
+    height: 50px;
+}
+
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+}
+
+.btn-circle img {
+    width: 15px;
+    height: 15px;
+}
+
+.btn-circle img.lg {
+    width: 50px;
+    height: 50px;
+    margin: -11px -17px;
+}
+
+/** utitlity classes below **/
+.modal-backdrop {
+    z-index: 0;
+}
+
+.border-red {
+    border: 1px solid red;
+}
+
+.bg-grey {
+    background-color: $bgBlack !important;
+}
+
+.bg-grey:hover {
+    background-color: $brandColor;
+}

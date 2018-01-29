@@ -1,0 +1,173 @@
+div.content {
+    height: 100%;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    background-color: rgb(205, 211, 211);
+    overflow-x: hidden;
+    transition: 0.5s;
+
+    .card {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        font-family: $PtSans400;
+        cursor: pointer;
+        width: 8rem;
+        height: 8rem;
+
+        div.card-poster {
+            position: relative;
+
+            // height: 4rem;
+            width: 100%;
+            vertical-align: middle;
+            background: $bgBlack;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            padding-top: .2rem;
+            padding-bottom: .2rem;
+
+            // button.edit-icon {
+            //     opacity: 0;
+            // }
+
+            img {
+                float: right;
+                opacity: 0;
+            }
+
+            div.dropdown-menu {
+                min-width: 6rem;
+
+                button.dropdown-item {
+                    font-family: $PtSans400 !important;
+                    font-size: .8rem;
+                    text-transform: capitalize !important;
+                }
+
+                .dropdown-item:focus, .dropdown-item:hover {
+                    color: #dbe1e9;
+                    text-decoration: none;
+                    background-color: $brandColor;
+                }
+            }
+        }
+
+        div.card-poster:hover {
+            // button.edit-icon {
+            //     opacity: 1;
+            //     transition: 1s opacity;
+            // }
+            img {
+                opacity: 1;
+                transition: .5s opacity;
+            }
+        }
+
+        div.card-body {
+            padding: 0.7rem;
+
+            div.card-desc {
+                span.title {
+                    font-size: .7rem;
+                    letter-spacing: .05rem;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                }
+            }
+
+            div.card-controlls {
+                display: none;
+
+                button {
+                    opacity: 0;
+                }
+            }
+        }
+
+        div.card-body:hover {
+            div.card-controlls {
+                button {
+                    transition: 1s opacity;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .card:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+        div.card-poster {
+            transition: background-color 0.5s ease;
+            background-color: $brandColor;
+        }
+    }
+
+    .card-wrapper.ng-enter,
+    .card-wrapper.ng-leave {
+        animation-duration: .30s;
+    }
+
+    // .card-wrapper.ng-leave {
+    //     animation-name: bounceOut;
+    // }
+
+    .card-wrapper.ng-enter {
+        animation-name: slideInUp;
+    }
+
+    .edit-icon {
+        position: absolute;
+        margin: 4px;
+        top: 10px;
+        left: 76%;
+    }
+}
+
+div.card-view-heading {
+    animation-name: zoomInUp;
+    animation-duration: 1s;
+    
+    border-radius: 5px;
+    ul {
+        li {
+            
+
+            div.media-body {
+                margin-top: 10px;
+
+                span.title {
+                    font-size: responsive 10px 16px;
+                    text-transform: capitalize;
+                    font-family: $PtSans400;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+div.card-filter{
+    animation-name: zoomInUp;
+    animation-duration: 1s;
+    margin-left: 2rem;
+    input[type=search]{
+        width: 100%;
+        
+        margin-top: 10px;
+        border: none;
+        border-bottom: 1px solid $brandColor;
+        background-color: transparent;
+        color: #333;
+        font-size: responsive 12px 18px;
+        font-family: $PtSans400;
+    }
+    input[type=search]:focus{
+        border-width: 2px;
+        transition: border-width .2s ease-in-out;
+    }
+    input[type=search]::placeholder{
+        font-size: responsive 8px 12px;
+        
+    }
+
+}
