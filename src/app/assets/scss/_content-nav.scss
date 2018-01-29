@@ -11,19 +11,29 @@ div.content-nav {
     box-shadow: -1px 0px 2px 0px rgba(0, 0, 0, 0.75);
     transition: 0.5s;
 
-
-
     div.nav-header {
         position: fixed;
         width: 25%;
         padding: 1rem;
         background-color: #333;
-        height: 150px;
+        height: 200px;
         z-index: 1;
 
-        ul{
-            li{
-                button{
+        ul {
+            li {
+                list-style: none;
+                margin-left: 2rem;
+
+                h5 {
+                    color: #f1f1f1;
+                    padding: .5rem;
+                    font-size: responsive 10px 12px;
+                    font-family: $PtSans400;
+                    font-weight: 700;
+                    letter-spacing: .15rem;
+                }
+
+                button {
                     font-size: responsive 10px 12px;
                 }
             }
@@ -34,7 +44,7 @@ div.content-nav {
         position: fixed;
         width: 25%;
         height: 50px;
-        top: 150px;
+        top: 200px;
         z-index: 1;
         background-color: #333;
 
@@ -48,14 +58,15 @@ div.content-nav {
             background-color: $inputBackground;
         }
     }
-    div.nav-menu.move-wrapper{
-        top: 200px;
+
+    div.nav-menu.move-wrapper {
+        top: 250px;
     }
 
     div.nav-menu {
         // margin: 1rem;
         position: relative;
-        top: 150px;
+        top: 200px;
         padding: 2rem;
         background-color: $inputBackground;
         height: auto;
@@ -66,6 +77,7 @@ div.content-nav {
 
             li {
                 list-style: none;
+
                 label {
                     letter-spacing: .05rem;
                     font-size: responsive 8px 14px;
@@ -73,7 +85,6 @@ div.content-nav {
                     font-family: $PtSans400;
                     text-transform: capitalize;
                     color: $brandColor;
-                    
                 }
             }
 
@@ -87,11 +98,11 @@ div.content-nav {
                     color: #f1f1f1;
                     font-size: responsive 10px 12px;
                     font-family: $PtSans400;
+
                     // appearance: none;
                     min-height: 80px;
                     word-break: break-all;
                     transition: min-height 3s ease-out;
-                    
                 }
 
                 span, select {
@@ -119,7 +130,7 @@ div.content-nav {
 
                     option {
                         color: #f1f1f1;
-                        font-size:responsive 10px 12px;
+                        font-size: responsive 10px 12px;
                         font-family: $PtSans400;
                         background-color: $brandColor;
                         padding: .2rem;
@@ -134,9 +145,10 @@ div.content-nav {
         ul.move {
             li {
                 padding-top: .2rem;
-                padding-bottom:.2rem;
+                padding-bottom: .2rem;
                 padding-right: .2rem;
                 cursor: pointer;
+
                 // margin-top: .5rem;
                 margin-bottom: .5rem;
 

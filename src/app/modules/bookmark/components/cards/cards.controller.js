@@ -37,7 +37,7 @@ export default
             _this.bookMarks.splice(0, _this.bookMarks.length);
             $timeout(()=>{
                 getBookMarks(id);
-            },100);
+            },300);
           
         }
 

@@ -6,6 +6,9 @@
         </a>
 
         <ul class="list-group">
+                <li class="list-item">
+                        <h5>{{edCtrl.bookmark.title}}</h5>
+                    </li>
             <li>
                 <button type="button" class="btn btn-secondary" data-ng-click="edCtrl.loadPreviousState()">close</button>
                 <button type="button" class="btn btn-success" data-ng-show="edCtrl.isTitleEditable || edCtrl.isUrlEditable || edCtrl.isParentChanged"

@@ -10,19 +10,9 @@ export default class moveController {
         _this.folders = [];
         _this.parentFolder = {};
         _this.selectFolder = {};
+        _this.bookmark = {};
 
-        var getAllFolders = () => {
-            bookmarkService.fetchBookMarkFolders().then((result) => {
-                log.info("all folders ", result);
-                $scope.$apply(() => {
-                    _this.folderMap = angular.copy(result);
-                    _this.parentFolder = result[$stateParams.id];
-                    //  delete result[$stateParams.id];
-                    _this.folders = _values(result);
-                    // _this.folders.unshift(_this.parentFolder);             
-                });
-            });
-        }
+
         _this.loadPreviousState = (id) => {
             log.info("loadPreviousState called with id = ", id);
             var parentId = id ? id : $stateParams.id;
@@ -48,7 +38,30 @@ export default class moveController {
 
         }
 
+        var getAllFolders = () => {
+            bookmarkService.fetchBookMarkFolders().then((result) => {
+                log.info("all folders ", result);
+                $scope.$apply(() => {
+                    _this.folderMap = angular.copy(result);
+                    _this.parentFolder = result[$stateParams.id];
+                    //  delete result[$stateParams.id];
+                    _this.folders = _values(result);
+                    // _this.folders.unshift(_this.parentFolder);             
+                });
+            });
+        }
 
+        var getBookmark = function () {
+            bookmarkService.fetchBookMark($stateParams.mId)
+                .then((arrObjs) => {
+                    $scope.$apply(() => {
+                        log.info("obj = ", arrObjs);
+                        _this.bookmark = arrObjs[$stateParams.mId];
+
+                    });
+                });
+        }
+        getBookmark();
         getAllFolders();
     }
 }
