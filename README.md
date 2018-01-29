@@ -1,29 +1,35 @@
 # bookmarks-advanced
 > UNDER DEVELOPMENT
 
-Features:
-- HTML5 User interface
-- Operation customization
+Install the dependencies and to build the application
+go the application folder
+```sh
+-- install nodejs/npm
+$ npm install
+$ npm install -g webpack
+-- to build the application
+$ npm run build
+```
 
 
-# build:
-> `npm run build`
+# to Run the application in firefox
+  - type about:debugging
+  - click load temporary extensions
+  - go to the dist folder of app
+  - click on manifest file
 
-#dependencies:
- npm/node and webpack needs to be installed.
-
-
-
- >#Features:
-    - Browse all the bookmarks using a cards layout
-    - edit the bookmarks
-    - move the bookmarks
-    - delete the bookmarks
-
-> #Note
-    this is a development in progress. The future updates will bring a list view with a reading mode to read the bookmarks in house.
+# Features 
+  - Browse the bookmarks -  
+        - click on the folder to see the children bookmarks and folders
+        - click on the bookmark to open it in new tab
+  - Delete the bookmark or folder
+  - move the bookmark in a new folder
+  - edit/update the bookmark 
 
 
-    
+
+
+
+
     Thank you for stopping by.
 
