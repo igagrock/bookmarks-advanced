@@ -23,6 +23,7 @@
                 <img src="../../../../assets/icons/menu.svg" alt="edit" id="context-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                 <div class="dropdown-menu " aria-labelledby="context-menu">
+                        <button class="dropdown-item" type="button" data-ng-click="lbc.viewBookmark($event, ele.url)">view</button>
                     <button class="dropdown-item" type="button" data-ng-click="lbc.editBookmark($event, ele.id)">Edit</button>
 
                     <button class="dropdown-item" type="button" data-ng-click="lbc.moveBookmark($event, ele.id)">move</button>
@@ -36,6 +37,7 @@
                     <span class="title" data-ng-class="{'text-white': ele.type =='folder'}">{{ele.title | limitTo : 30}}{{ ele.title.length > 30 ? '...' : ''}}</span>
 
                 </div>
+
             </div>
         </div>
         <!-- card end -->

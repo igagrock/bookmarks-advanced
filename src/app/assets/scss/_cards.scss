@@ -42,6 +42,7 @@ div.content {
                     font-family: $PtSans400 !important;
                     font-size: .8rem;
                     text-transform: capitalize !important;
+                    padding-left: .9rem;
                 }
 
                 .dropdown-item:focus, .dropdown-item:hover {
@@ -89,6 +90,7 @@ div.content {
                 button {
                     transition: 1s opacity;
                     opacity: 1;
+                    transition-delay: 1s;
                 }
             }
         }
@@ -100,6 +102,12 @@ div.content {
         div.card-poster {
             transition: background-color 0.5s ease;
             background-color: $brandColor;
+
+            img {
+                opacity: 1;
+                transition: .5s opacity;
+                transition-delay: .5s; 
+            }
         }
     }
 

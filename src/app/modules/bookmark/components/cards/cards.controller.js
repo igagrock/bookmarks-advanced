@@ -2,7 +2,7 @@ export default
     /*@ngInject */
 
     class cardsController {
-    constructor($scope, $log,$timeout, $state, $stateParams, bookmarkService) {
+    constructor($scope, $log,$timeout, $window, $state, $stateParams, bookmarkService) {
         var _this = this;
         var log = $log;
         _this.bookMarks = [];
@@ -13,7 +13,7 @@ export default
         }
         _this.openBookMark = function (ele) {
             if (ele.type == 'bookmark') {
-                window.open(ele.url, '_blank');
+                $window.open(ele.url, '_blank');
             }
             else if (ele.type == "folder") {
                 bookmarkService.loadCardState(ele.id);
@@ -22,6 +22,10 @@ export default
         _this.editBookmark = (event,id) => {
             event.stopPropagation();
             bookmarkService.loadEditState(id);
+        }
+        _this.viewBookmark = (event,url) => {
+            event.stopPropagation();
+            $window.open(url, '_blank');
         }
         _this.moveBookmark = (event,id) =>{
             event.stopPropagation();
