@@ -13,26 +13,22 @@ export default
         }
         _this.openBookMark = function (ele) {
             if (ele.type == 'bookmark') {
-                $window.open(ele.url, '_blank');
+                _this.viewBookmark(ele.url);
             }
             else if (ele.type == "folder") {
                 bookmarkService.loadCardState(ele.id);
             }
         }
-        _this.editBookmark = (event,id) => {
-            event.stopPropagation();
+        _this.editBookmark = (id) => {
             bookmarkService.loadEditState(id);
         }
-        _this.viewBookmark = (event,url) => {
-            event.stopPropagation();
+        _this.viewBookmark = (url) => {
             $window.open(url, '_blank');
         }
-        _this.moveBookmark = (event,id) =>{
-            event.stopPropagation();
+        _this.moveBookmark = (id) =>{
             bookmarkService.loadMoveState(id);
         }
-        _this.deleteBookmark = (event, id) =>{
-            event.stopPropagation();
+        _this.deleteBookmark = ( id) =>{
             bookmarkService.loadDeleteState(id);
         }
 

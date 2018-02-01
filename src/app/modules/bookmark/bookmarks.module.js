@@ -7,6 +7,7 @@ import cardsComponent from "./components/cards/cards.component";
 import editComponent from "./components/edit/edit.component";
 import moveComponent from "./components/move/move.component";
 import deleteComponent from "./components/delete/delete.component";
+import contextMenuDirective from "./directives/context-menu/context-menu.directive";
 
 export default
     angular.module('bookmarkModule', [])
@@ -16,6 +17,7 @@ export default
         .component('edit', editComponent())
         .component('move', moveComponent())
         .component('delete', deleteComponent())
+        .directive("contextMenu", contextMenuDirective)
         .service('bookmarkService', bookmarkService)
         .service("events", eventService)
         .name;

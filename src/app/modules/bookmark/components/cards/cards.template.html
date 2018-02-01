@@ -21,14 +21,20 @@
             on-update="lbc.refreshBookmarks(id)" >
             <div class="card-poster">
                 <img src="../../../../assets/icons/menu.svg" alt="edit" id="context-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-                <div class="dropdown-menu " aria-labelledby="context-menu">
+                <context-menu 
+                ele = "ele"
+                view = "lbc.openBookMark(ele)"
+                edit = "lbc.editBookmark(id)"
+                move = "lbc.moveBookmark(id)"
+                delete = "lbc.deleteBookmark(id)"
+                ></context-menu>
+                <!-- <div class="dropdown-menu " aria-labelledby="context-menu" hide-on-click>
                         <button class="dropdown-item" type="button" data-ng-click="lbc.viewBookmark($event, ele.url)">view</button>
                     <button class="dropdown-item" type="button" data-ng-click="lbc.editBookmark($event, ele.id)">Edit</button>
 
                     <button class="dropdown-item" type="button" data-ng-click="lbc.moveBookmark($event, ele.id)">move</button>
                     <button class="dropdown-item" type="button" data-ng-click="lbc.deleteBookmark($event, ele.id)">delete</button>
-                </div>
+                </div> -->
 
 
             </div>
