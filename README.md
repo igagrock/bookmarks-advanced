@@ -34,6 +34,29 @@ $ npm run build
 
     ![Home view screenshot](https://github.com/igagrock/bookmarks-advanced/blob/master/screens/screen1.png)
 
+  - folder view
+
+    ![folder view screenshot](https://github.com/igagrock/bookmarks-advanced/blob/master/screens/folder1.png)
+  
+  - Bookmark view
+
+    ![bookmark view screenshot](https://github.com/igagrock/bookmarks-advanced/blob/master/screens/folder-view.png)
+
+  
+  - context menu for edit, view, delete , move
+
+    ![edit view screenshot](https://github.com/igagrock/bookmarks-advanced/blob/master/screens/screen-edit.png)
+
+  - vertical nav for performing operations
+
+    ![edit view screenshot](https://github.com/igagrock/bookmarks-advanced/blob/master/screens/move-menu.png)
+
+    ---
+    ![edit view screenshot](https://github.com/igagrock/bookmarks-advanced/blob/master/screens/delete.png)
+
+
+  
+
 
 
 
