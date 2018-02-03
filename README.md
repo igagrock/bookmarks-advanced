@@ -28,6 +28,13 @@ $ npm run build
 
 
 
+  Screenshots:
+
+  - Home view
+
+    ![Home view screenshot](https://drive.google.com/file/d/1-1kZOOF6SnlNCFaOhy_gQsF5UBpfE9Br/view)
+
+
 
 
 

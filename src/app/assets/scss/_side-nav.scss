@@ -30,7 +30,9 @@ div.side-nav {
                 span.text {
                     padding-left: .5rem;
                     font-size: responsive 8px 14px;
+                    font-weight: 700;
                     text-transform: capitalize;
+                    letter-spacing: .05rem;
                     color: $brandColor;
                     font-family: $PtSans400;
                 }
@@ -39,12 +41,13 @@ div.side-nav {
                     background-color: $brandColor;
                     float: right;
                     font-size: responsive 8px 14px;
+                    padding: 0.35rem 0.5rem;
+                    font-weight: 700;
                 }
             }
 
-         
-            div.card-header:hover ,
-            div.card-header.active{
+            div.card-header:hover,
+            div.card-header.active {
                 background-color: $brandColor;
                 color: #f1f1f1;
 
@@ -70,6 +73,7 @@ div.side-nav {
                         margin-left: 1rem;
                         font-size: .8rem;
                         font-family: $PtSans400;
+                        text-transform: capitalize;
                     }
 
                     span.badge {
@@ -83,7 +87,7 @@ div.side-nav {
                 }
 
                 li.list-group-item:hover {
-                    background-color: $brandColor;
+                    border-color: $brandColor;
 
                     span.text {
                         color: #f1f1f1;
@@ -126,4 +130,68 @@ div.side-nav {
 
 div.side-nav > .nav-header {
     background-color: $bgBlack;
+}
+
+@media only screen and (max-width: 1600px) {
+    div.side-nav {
+        div.nav-menu {
+            margin-top: 2rem;
+
+            div.card {
+                div.card-header {
+                    padding: .5rem .5rem;
+
+                    span.text {
+                        font-size: responsive 10px 14px;
+                    }
+
+                    span.badge {
+                        font-size: responsive 8px 10px;
+                    }
+                }
+
+                ul.children {
+                    li.list-group-item {
+                        background-color: #222;
+                        padding-left: 2rem;
+                        padding-top: .5rem;
+                        padding-bottom: .5rem;
+                        cursor: pointer;
+
+                        span.text {
+                            font-size: responsive 10px 14px;
+                        }
+
+                        span.badge {
+                            background-color: $brandColor;
+                            float: right;
+                            font-size: responsive 8px 10px;
+                            padding: .4rem;
+                        }
+                    }
+
+                    .list-group-item:first-child, .list-group-item:last-child {
+                        border-radius: 0px;
+                    }
+
+                    li.list-group-item:hover {
+                        background-color: $brandColor;
+
+                        span.text {
+                            color: #f1f1f1;
+                        }
+
+                        span.badge {
+                            background-color: #f1f1f1;
+                            color: $brandColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div.side-nav > .nav-header {
+        background-color: $bgBlack;
+    }
 }

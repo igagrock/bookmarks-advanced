@@ -6,8 +6,10 @@ $md_nav_width: 25%;
 $md_content-width: 75%;
 $lg_nav_width: 18%;
 $lg_content_width: 82%;
-$xl_nav_width: 18%;
-$xl_content-width: 82%;
+$xl_nav_width: 15%;
+$xl_content-width: 85%;
+$xxl_nav_width: 18%;
+$xxl_content-width: 82%;
 
 $content-nav-width: 25%;
 $content-nav-left: 75%;
@@ -81,12 +83,23 @@ $content-nav-left: 75%;
     div.content {
         width: $xl_content-width;
         left: $xl_nav_width;
+
+
     }
 }
 
-@media only screen and (max-width: 1360px) {
+@media only screen and (min-width: 1600px) {
   
+    div.side-nav {
+        width: $xxl_nav_width;
+    }
 
+    div.content {
+        width: $xxl_content-width;
+        left: $xxl_nav_width;
+
+
+    }
 
 }
 
