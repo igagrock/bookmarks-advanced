@@ -32,7 +32,7 @@ $ npm run build
 
   - Home view
 
-    ![Home view screenshot](https://drive.google.com/file/d/1-1kZOOF6SnlNCFaOhy_gQsF5UBpfE9Br)
+    ![Home view screenshot](https://github.com/igagrock/bookmarks-advanced/blob/master/screens/screen1.png)
 
 
 
